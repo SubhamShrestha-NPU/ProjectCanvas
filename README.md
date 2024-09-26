@@ -16,16 +16,10 @@ An ever-evolving canvas for rapid prototyping, experiments, and wild code doodle
 
 1. **Clone the Repository**:
    ```
-   git clone https://github.com/yourusername/ProjectCanvas.git
+   git clone https://github.com/SubhamShrestha-NPU/ProjectCanvas.git
    ```
 
-2. **Create Your First Doodle**:
-   ```
-   cd ProjectCanvas
-   touch my-awesome-doodle.js
-   ```
-
-3. **Share Your Masterpiece**:
+2. **Share Your Masterpiece**:
    Commit your changes, push to your remote, and share the link with the world!
 
 ## Contributing
