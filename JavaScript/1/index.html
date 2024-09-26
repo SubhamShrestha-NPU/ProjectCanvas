@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<p>
+    <head>
+        <meta charset="UTF-8" lang="en">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JavaScript Demo 1</title>
+        <link rel="icon" href="C:/Users/subha/OneDrive/Desktop/Code/CSS Magic/images/proIMGbg.png">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <span>
+        <div id="testEnvironment">
+        </div>
+        <script src="testEnvironment.js"></script>
+        <p id="id1"></p> <!--getElementById() METHOD IS USED-->
+        <p>2 + 3 = <span id="id2"></span></p>
+        <p>NAME : <span id="id3"></span></p>
+        <p>ARRAY : <span id="id4"></span></p>
+        <p>EXTRA : <span id="id5"></span></p>
+        <p>
+            REMAINDER OF 34 DIVIDED BY 15 IS
+            <script>
+                const w = 34; 
+                const m = 15; 
+                //document.write(w%m);
+            </script>
+        </p>
+        <p>'Subham' is a <b><span id="id6"></span></b> type of data </p>
+        <p>Applying Left Shift Assignment Operator on 12: <span id="id7"></span></p>
+        <!--script>
+            document.write(11+9); /*ALTERNATIVE METHOD USING document.write()*/
+            window.alert(19+1); /*CAN ALSO USE alert(), as window is a global attribute*/
+            console.log(11+11); /*IT IS USED TO DISPLAY IN THE CONSOLE [ESPECIALLY FOR DEBUGGING PURPOSES]*/
+        </script-->
+        <p>500 inches = <span id="id8"></span> centimeters</p>
+        <p><span id="id9"></span><div id="id11"></div></p>
+        <p><span id="id10"> is another person.</span></p>
+        
+        <button onclick="document.getElementById('id12').innerHTML=Date()">The time is?</button>
+        <p id="id12"></p><!--changing the content of other element-->
+        <button onclick="this.innerHTML = Date()">What's the time?</button><!--changing own's element--> <br>
+        <label for="myInput">Type something:</label>
+    <input type="text" id="myInput" oninput="countCharacters()">
+    <p id="charCount">Character count: 0</p>
+
+    <script>
+        function countCharacters() {
+            const inputField = document.getElementById("myInput");
+            const charCountElement = document.getElementById("charCount");
+
+            const inputText = inputField.value; //CAN ALSO BE WRITTEN AS const inputText = document.getElementById("myInput").value;
+            const numCharacters = inputText.length;
+
+            charCountElement.textContent = `Character count: ${numCharacters}`;
+        } //AI generated code
+    </script> 
+    
+    <p id="id13">The statement "100&lt;0" is <span id="id14"></span></p>
+    <script>
+        document.getElementById("id14").innerHTML = (10<0); //CAN ALSO BE WRITTEN AS Boolean(10<0);
+    </script>
+
+    <p>The third first digit of &pi; after decimal point is <span id="show"></span></p>
+    <script>
+        var pi = '3.14159';
+        document.getElementById("show").innerHTML = pi.at(2); //ES2022 INTRODUCED at() METHOD, ITS PRIMITIVE EQUIVALENT IS charAt() METHOD
+    </script>
+    <p>The unicode of &#x1F60D; is not <span id="id15"></span></p>
+    <script>
+        let text = "&#x1F60D;";
+        document.getElementById("id15").innerHTML = + text.charCodeAt(0);
+    </script>
+
+<hr>
+
+<h2>JS String Search</h2>
+    <p>The word 'attitude' in the sentence <br>
+       <blockquote id="id16"></blockquote>
+       is located at the <i id="id17"></i>th place (including spaces) <br>
+       Here the word 'ability' first appeared at <i id="id18"></i>th place, <br>
+       and last appeared at <i id="id19"></i>th place. <br>
+       Here the letters 'ti' exactly are repeated <i id="id20"></i> times, <br>  
+       but if we consider case insensitivity there are <i id="id21"></i> repetitions. <br>
+       The word 'ability' has repeated <i id="id22"></i> times, regardless of their formats. <br>
+       In the above passage there is the word 'keep', at least one time : <b id="id23"></b> <br>
+       In the above passage there is the word 'determination', at least one time : <b id="id24"></b><br>
+       The string at the 11th character starts with 'is' : <b id="id25"></b><br>
+       The passage ends with 'waiting' : <b id="id26"></b></p>
+    <script>
+        const quote = 'PATIENCE is not the ability to wait, \<br\> but the ability to keep a good attitude while waiting.';
+        document.getElementById('id16').innerHTML = quote;
+        const locate = quote.indexOf('attitude');
+        document.getElementById('id17').innerHTML = locate;
+
+        document.getElementById('id18').innerHTML = quote.indexOf('ability');
+        document.getElementById('id19').innerHTML = quote.lastIndexOf('ability');
+        
+        document.getElementById('id20').innerHTML = quote.match(/ti/g).length + " (" + quote.match(/ti/g) + ")";
+        document.getElementById('id21').innerHTML = quote.match(/ti/gi).length + " (" + quote.match(/ti/gi) + ")";
+        const iterator = quote.matchAll(/the/gi);
+        //const count = Array.from(iterator).length;
+        document.getElementById('id22').innerHTML = Array.from(iterator).length;
+
+        document.getElementById('id23').innerHTML = quote.includes("keep");
+        document.getElementById('id24').innerHTML = quote.includes("determination");
+        document.getElementById('id25').innerHTML = quote.startsWith('is',9);
+        document.getElementById('id26').innerHTML = quote.endsWith('waiting.');
+    </script>    
+
+<hr>
+<h2>JS String Template</h2>
+    <p id="id27"></p>
+    <script>
+            let name = 'Rakesh Patel';
+            let hobby = 'sing';
+            let statement = `My name is \<u\>${name}\</u\>, I like to \<u\>${hobby}\</u\> in my leisure time`;
+            document.getElementById('id27').innerHTML = statement;
+    </script>
+
+<hr>
+<h2>JS Numbers</h2>
+    <h3>(82)<sub>10</sub> can also be written in :</h3>
+    <p id="id28"></p>
+    <script>
+        const number = 82
+        document.getElementById('id28').innerHTML = "Hexatrigesimal (base 36): " + number.toString(36) + "<br>" +
+                                                    "Duotrigesimal (base 32): " + number.toString(32) + "<br>" +
+                                                    "Hexadecimal (base 16): " + number.toString(16) + "<br>" +
+                                                    "Duodecimal (base 12): " + number.toString(12) + "<br>" +
+                                                    "Decimal (base 10): " + number.toString(10) + "<br>" +
+                                                    "Octal (base 8): " + number.toString(8) + "<br>" +
+                                                    "Binary (base 2): " + number.toString(2) + "<br>" +
+                                                    "In JavaScript the maximum value possible is " + Number.MAX_VALUE + "<br>" +
+                                                    "Similarly, the minimum value possible in JavaScript is " + Number.MIN_VALUE + "<br>" +
+                                                    "We can represent 82 in scientific notation as: " + number.toExponential();
+
+    </script>
+
+<hr>
+<h2>JavaScript BigInt</h2>
+    <h3>Denoting 999999999999999999 (9*11*18) with and without BigInt</h3>
+    <p id="id29"></p>
+    <p id="id30"></p>
+    <p id="id31"></p>
+    <script>
+        let i = 999999999999999999;
+        let bi = 999999999999999999n; // CAN ALSO BE WRITTEN AS BigInt(999999999999999999)
+        document.getElementById('id29').innerHTML = "Without BigInt: " + i;
+        document.getElementById('id30').innerHTML = "With BigInt: " + bi;
+        document.getElementById('id31').innerHTML = "The type of BigInt is <b>" + typeof bi + "</b> (therefore it is a separate data type)";
+    </script>
+
+<hr>    
+<h2>JS Number Methods</h2>
+        <p id="id32"></p>
+        <p>
+            Since Unix epoch (January 1, 1970, 00:00:00 UTC) to the moment you last clicked the button, <br><span id="id33">__</span>ms has passed. <br>
+            <button onclick="time()" id="id34">Click to submit the moment</button>
+        </p>
+        <script>
+            let x = 2.568921581
+            document.getElementById('id32').innerHTML = "toFixed(10): " + x.toFixed(10) + "<br>" +
+                                                        "toFixed(9): " + x.toFixed(9) + "<br>" +
+                                                        "toFixed(8)): " + x.toFixed(8) + "<br>" ;       
+            function time() {
+                document.getElementById('id33').innerHTML = Number(new Date());
+            }
+        </script>
+
+<hr>
+<h2>JS Number Properties</h2>
+        <p id="id35"></p>
+        <script>
+            document.getElementById('id35').innerHTML = Number.EPSILON + 
+                                                        '<br> This is how JS denotes positive infinity: ' + Number.POSITIVE_INFINITY + 
+                                                        '<br> Negative infinity: ' + Number.NEGATIVE_INFINITY;
+        </script>
+
+<hr>
+<h2>JS Arrays</h2>
+        <p id="id36"></p>
+        <p id="id37"></p>
+        <p id="id38"></p>
+        <p id="id39"></p>
+        <p id="id40"></p>
+        <script>
+            const array1 = ["item1/i","item2/i","item3/i"];
+            array1.push('item4/i')
+            const array2 = [];
+            array2[0] = "item1/ii";
+            array2[1] = "item2/ii";
+            array2[2] = "item3/ii"; //BOTH THE METHODS OF ADDING ITEMS ARE CORRECT, CAN ALSO BE PUT INTO COMBINED USE
+            array2[array2.length] = 'item4/ii';
+            document.getElementById('id36').innerHTML = array1.toString() + 
+                                                        "<br>" + array2.toString() + //CONVERTING AN ARRAY TO STRING
+                                                        "<br>" + array1 +
+                                                        "<br> Using <b>typeOf</b> on <i>array1</i> returns <b>" + typeof array1 + "</b> [hence <i>array</i> is a special type of <i>object</i>]" +
+                                                        "<br> array1 has " + array1.length + " elements, as well as array2 has " + array2.length + " elements.";
+            let aLen = array1.length;
+            let display1 = '<ul>';
+            for (let i = 0; i < aLen; i++) {
+                display1 += '<li>' + array1[i] + '</li>';
+            }
+            display1 += '</ul>';
+            document.getElementById('id38').innerHTML = display1;
+
+            let display2 = '<ul>';
+            array2.forEach(function1);
+            display2 += '</ul>';
+            document.getElementById('id39').innerHTML = display2;
+            function function1(value1) {
+                display2 += '<li>' + value1 + '</li>';
+            }
+
+            let array3 = new Array("item1/iii","item2/iii","item3/iii","item4/iii"); //NEW ARRAY CAN ALSO BE CREATED IN MANNER, THIS IS JavaScript's BUILT-IN ARRAY CONSTRUCTOR
+            //console.log(Array.isArray(array1));
+            //console.log(array2 instanceof Array);
+
+            const myObj = {
+                name: "John",
+                age: 30,
+                cars: [
+                    {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+                    {name:"BMW", models:["320", "X3", "X5"]},
+                    {name:"Fiat", models:["500", "Panda"]}
+                ]
+            }
+            let holder = '';
+            for (let i in myObj.cars) {
+                holder += "<h2>" + myObj.cars[i].name + "</h2>";
+                for (let j in myObj.cars[i].models) {
+                    holder += myObj.cars[i].models[j] + "<br>";
+                }
+            }
+            document.getElementById('id40').innerHTML = holder;
+        </script>
+
+<hr>
+<h2>JS Array Methods</h2>
+        <p id="id41"></p> 
+        <p id="id42"></p>
+        <p id="id43"></p>
+        <p id="id44"></p>
+        <p id="id45"></p>
+        <p id="id46"></p>
+        <p id="id47"></p>
+        <p id="id48"></p>
+        <p id="id49"></p>
+        <p id="id50"></p>
+        <script>
+            const fruits = [
+    "Apple", "Apricot", "Avocado", "Banana", "Blackberry", "Blackcurrant", "Blueberry", "Boysenberry", "Breadfruit", "Cantaloupe",
+    "Carambola", "Cherimoya", "Cherry", "Clementine", "Cloudberry", "Coconut", "Cranberry", "Currant", "Date", "Dragonroot",
+    "Durian", "Elderberry", "Feijoa", "Fig", "Gooseberry", "Grape", "Grapefruit", "Guava", "Honeydew", "Huckleberry",
+    "Jackfruit", "Jambul", "Jujube", "Kaffir Lime", "Kiwi", "Kumquat", "Lemon", "Lime", "Longan", "Loquat",
+    "Lychee", "Mandarin", "Mango", "Mangosteen", "Mulberry", "Nance", "Nectarine", "Olive", "Orange", "Papaya",
+    "Passionfruit", "Peach", "Pear", "Persimmon", "Pineapple", "Plantain", "Plum", "Pomegranate", "Pomelo", "Prickly Pear",
+    "Quince", "Rambutan", "Raspberry", "Redcurrant", "Rose Apple", "Sapodilla", "Satsuma", "Soursop", "Star Apple", "Starfruit",
+    "Strawberry", "Sugar Apple", "Tamarillo", "Tamarind", "Tangelo", "Tangerine", "Ugli Fruit", "Velvet Apple", "Watermelon", "White Currant",
+    "Yuzu", "Zucchini", "Ackee", "Babaco", "Bilberry", "Brush Cherry", "Canary Melon", "Casaba Melon", "Cucumber", "Custard Apple",
+    "Damson Plum", "Eggplant", "Finger Lime", "Italian Prune Plum", "Java Plum", "Kiwano", "Langsat", "Lucuma", "Mammee Apple", "Marang"
+            ];
+            document.getElementById('id41').innerHTML = 'The array <i>fruits</i> has ' + fruits.length + ' elements.';
+            document.getElementById('id42').innerHTML = 'Contents of the array <i>fruits</i> : <b>' + fruits.toString() + '.</b>';
+            document.getElementById('id43').innerHTML = 'The 50 <sup>th</sup> element in this array is: ' + fruits.at(-51); // at() SUPPORTS -ve VALUES AND MEANS COUNTING FROM BACK, WHAT'S THE 51st ELEMENT {array[] does not support this}
+            document.getElementById('id44').innerHTML = 'Here is the formatted contents of the <i>fruits</i> : <br><b>' + fruits.join('&nbsp &nbsp') + '</b> <br> <br >HERE IS ANOTHER ARRAY:'; //IF INSTEAD OF <br> WE PUT * THEN IT WOULD BE LIKE : Apple*Apricot*Avocado...
+            const uncommonItems = ["quokka", "theremin", "moonbow", "bioluminescence", "aurora borealis"]; //ADDING A MORE COMPREHENSIBLE ARRAY.
+            document.getElementById('id45').innerHTML = uncommonItems.join(', ');
+            uncommonItems.push('fossilized amber');
+            document.getElementById('id46').innerHTML = 'AFTER PUSHING IN A NEW ELEMENT: ' + uncommonItems.join(', ') + '<br> Its current length is ' + uncommonItems.push();
+            uncommonItems.pop();
+            document.getElementById('id47').innerHTML = 'AFTER POPPING OUT THE LAST ELEMENT OF THE ORIGINAL ARRAY <b>\'' + uncommonItems.pop() + '\'</b>, THE ARRAY CONTAINS : ' + uncommonItems.join(', ') + '<br> <b>This means that when we push one element and then use <i>pop()</i>, it will deduct both : </b> <ul><li>The last element of the original array</li> <li>The last element of the previously modified array</li></ul>';
+            document.getElementById('id48').innerHTML = 'LET\'S SHIFT \'' + uncommonItems.shift() + '\' IN THIS NEW ARRAY. <br> SO, WE HAVE : ';
+            uncommonItems.shift();
+            uncommonItems.unshift('Narwhal');
+            document.getElementById('id49').innerHTML = uncommonItems.join(', ') + '<br> LET\'S REPLACE IT WITH \'Narwhal\' : <br> SO, WE HAVE : ' + uncommonItems.join(', ') + 
+                                                        '<br>LET\'S CREATE ANOTHER ARRAY';
+            const additionalUncommonItems = ["geode", "phantom quartz", "rainbow eucalyptus", "glass frog", "dragon's blood tree"];
+            document.getElementById('id50').innerHTML = 'CURRENTLY WE HAVE TWO ARRAYS : <br>' +
+                                                        'ARRAY 1 : ' + uncommonItems.join(', ') +
+                                                        '<br> ARRAY 2 : ' + additionalUncommonItems.join(', ') +
+                                                        '<br> AFTER <b>CONCATENATION</b> BOTH, WE HAVE: <br>' + uncommonItems.concat(additionalUncommonItems).join(' , ');
+        </script>
+
+<hr>
+<h2>JavaScript Array Search</h2>
+        <p id="id51"></p>
+        <p id="id52"></p>
+        <p id="id53"></p>
+        <p id="id54"></p>
+        <p id="id55"></p>
+        <script>
+            const richPeople= [
+                "Bernard Arnault",
+                "Elon Musk",
+                "Jeff Bezos",
+                "Mark Zuckerberg",
+                "Larry Ellison"
+            ];
+            document.getElementById('id51').innerHTML = 'In the Forbes List of Richest Persons in the World, <i>Elon Musk</i> has a ranking of <b>' + (richPeople.indexOf('Elon Musk')+1) + '</b>';
+            document.getElementById('id52').innerHTML = '\'Warren Buffet\' is the this list\'s top 5 : <b>' + richPeople.includes('Warren Buffet') + '</b>';
+            var any = richPeople.find(function2);
+            function function2 (value, index, array) {
+                return value.startsWith('J');
+            }
+            
+            var any1 = richPeople.findIndex(function3);
+            function function3 (value, index, array) {
+                return value.startsWith('J')
+            }
+
+            document.getElementById('id53').innerHTML = 'Here the name of <b>' +  any + '</b> is the first element in the array that starts with the letter \'J\'. <br>' +
+                                                        'He holds the rank <b>' + (any1+1) + '</b>.';
+        </script>
+
+<hr>
+<h2>JavaScript Sorting Array</h2>
+        <p id="id56"></p>
+        <p id="id57"></p>
+        <p id="id58"></p>
+        <table class="comparisonTable">
+            <tr>
+                <th>Without Compare Function</th>
+                <th>With Compare Function</th>
+            </tr>
+            <tr>
+                <td class="sortRack"> <button id="alphaSort" class="Sort" onclick="function5()">Sort Alphabetically</button> </td>
+                <td class="sortRack"> <button id="numSort" class="Sort" onclick="function6()">Sort Numerically</button> </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <p id="id59"></p> </td>
+            </tr>
+        </table>
+        <blockquote>
+            <span class="enlarge">“</span>Randomness is the true foundation of mathematics. It is the only thing that can be truly free.” <br> - Gregory Chaitin
+            <p><button id="60" onclick="function7()">Delve in the randomness of JavaScript</button></p>
+            <p id="id61"></p>
+        </blockquote>
+        <p id="id62"></p>
+        <p id="id63"></p>
+        <p id="id64"></p>
+        <p id="id65"></p>
+        <script>
+            const Alphabet = ['Vernal equinox','Summer solstice', 'Autumnal equinox', 'Winter solstice'];
+            const Numeric = [2, 1, 3, 4, 9, 5, 7, 8, 10, 6];
+            const Obj = [
+                {name:'Alice', age:25},
+                {name:'Bob', age:20},
+                {name:'Charlie', age:35}
+            ];
+            const anyNum = [18, 56, 89, 1792, 182, 65];
+            
+            let display3 = '<ul>';
+            Alphabet.sort().forEach(function4);
+            display3 += '</ul>';
+            function function4 (value2) {
+                display3 += '<li>' + value2 + '</li>';
+            }
+            document.getElementById('id56').innerHTML = 'We know that there are four seasons majorly. Alphabetically they are :' + display3;
+            document.getElementById('id57').innerHTML = 'The cycle in which the seasons transits are completely opposite in the both the hemispheres <br>' +
+                                                        'While, in the Northern Hemisphere it goes like this : ' + Alphabet.join(' > ') + '<br>' +
+                                                        'In the Southern Hemisphere they cycles like this: ' + Alphabet.reverse().join(' > ') + '<br>' +
+                                                        'This means if one goes in this cycle : ' + Numeric.sort(function(x,y) {return x-y}) + '<br>' +
+                                                        'Another will go in this cycle :' + Numeric.sort(function(x,y) {return y-x});
+            document.getElementById('id58').innerHTML = '*** By the way, this section is about JS Sorting Array and not about the seasonal cycle. <br> We know, when sort() is used alone on numeric values, it mess up as it treats it like string. To solve this we have the Compare Function. <br>' +
+                                                        'So, to gauge the difference we can use the tool below :';
+            function function5() {
+                anyNum.sort();
+                document.getElementById('id59').innerHTML = anyNum + '<br> [Alphabetically Sorted]';
+            }
+            function function6() {
+                anyNum.sort(function(a,b) {return a-b;});
+                document.getElementById('id59').innerHTML = anyNum + '<br> [Numerically Sorted]';
+            }
+
+            function function7 () {
+               for (let int = Numeric.length - 1; int > 0; int--) {
+                    let jnt = Math.floor(Math.random() * (int+1));
+                    let k = Numeric[int];
+                    Numeric[int] = Numeric[jnt];
+                    Numeric[jnt] = k;
+               }
+               document.getElementById('id61').innerHTML   = Numeric; 
+            }
+
+            document.getElementById('id62').innerHTML = 'In this whole anyNum array, the maximum value is : <b>' + function8(anyNum) + '</b>';
+            function function8(array4) {
+                return Math.max.apply(null, array4);
+            }
+
+            document.getElementById("id63").innerHTML = 'Smallest number : ' + myArrayMin(anyNum);
+
+                function myArrayMin(array5) {
+                    let len = array5.length;
+                    let min = Infinity;
+                    while (len--) {
+                    if (array5[len] < min) {
+                        min = array5[len];
+                        }
+                    }
+                    return min;
+                }
+                function9();
+                Obj.sort(function(a, b){return a.year - b.year});
+                function9();
+
+                function function9() {
+                    document.getElementById("id64").innerHTML =
+                    Obj[0].name + " " + Obj[0].age + "<br>" +
+                    Obj[1].name + " " + Obj[1].age + "<br>" +
+                    Obj[2].name + " " + Obj[2].age;
+                }
+            
+                const myArr = [
+  {name:"X00",price:100 },
+  {name:"X01",price:100 },
+  {name:"X02",price:100 },
+  {name:"X03",price:100 },
+  {name:"X04",price:110 },
+  {name:"X05",price:110 },
+  {name:"X06",price:110 },
+  {name:"X07",price:110 },
+  {name:"X08",price:120 },
+  {name:"X09",price:120 },
+  {name:"X10",price:120 },
+  {name:"X11",price:120 },
+  {name:"X12",price:130 },
+  {name:"X13",price:130 },
+  {name:"X14",price:130 },
+  {name:"X15",price:130 },
+  {name:"X16",price:140 },
+  {name:"X17",price:140 },
+  {name:"X18",price:140 },
+  {name:"X19",price:140 }
+];
+
+myArr.sort( (p1, p2) => {
+  if (p1.price < p2.price) return -1;
+  if (p1.price > p2.price) return 1;
+  return 0;
+});
+
+let txt = "";
+myArr.forEach(myFunction);
+
+function myFunction(value) {
+  txt += value.name + " " + value.price + "<br>"; 
+}
+document.getElementById("id65").innerHTML = txt;
+        </script>
+
+<hr>
+<h2>JavaScript Array Iteration</h2>
+    <p id="id66"></p>
+    <p id="id67"></p>
+    <p id="id68"></p>
+    <p id="id69"></p>
+    <p id="id70"></p>
+    
+    <script>
+        function function10(v, i, a) {
+            return v+10;
+        }
+        document.getElementById('id66').innerHTML = 'Array Numeric : ' + 
+                                                    Numeric.sort(function(a,b) {return a-b}).join(', ') +
+                                                    '<br> Now if we want to see numbers from 11 to 20, without creating another array manually : <br>' +
+                                                    Numeric.map(function10).join(', ');
+        
+        let Numeric1 = Numeric.concat(Numeric.map(function10));
+
+        function function11(v, i, a) {
+            return v%2 !== 0;
+        }
+        function function12(v, i, a) {
+            return v%2 == 0;
+        }
+        document.getElementById('id67').innerHTML = 'From 1 to 20, these are the odd numbers : ' + Numeric1.filter(function11) +
+                                                    '<br> And these are the even numbers : ' + Numeric1.filter(function12);
+
+        function function13(s, v) {
+            return s+v;
+        }
+        var sum = Numeric1.reduce(function13);
+        avg = sum/Numeric1.length;
+        document.getElementById('id68').innerHTML = 'Average of all the values from 1 to 20 : ' + avg;
+        document.getElementById('id69').innerHTML = 'All the numbers from 1 to 20 are multiple of 1 : <b>' + 
+                                                    Numeric1.every(function(v) { return v%1 == 0}) +
+                                                    '</b> <br> Few number/s i  this are range are divisible by 5 : ' +
+                                                    Numeric1.some(function(v) {return v%5 == 0}); 
+        var en = Alphabet.entries()
+        for (let el of en) {
+            document.getElementById('id70').innerHTML += el.join(' : ') + '<br>';
+        }
+    </script>
+
+<hr>
+<h2>JS Dates</h2>
+    <p id="id71"></p>
+    <script>
+        //const date = new Date();
+        document.getElementById('id71').innerHTML = 'Until you last refreshed this page, the time was : ' + new Date().toUTCString();
+    </script>
+
+<hr>
+<h2>JS Date Formats</h2>
+    <p id="id72"></p>
+    <script>
+        document.getElementById('id72').innerHTML = 'Albert Einstein was born on ' + new Date('1879-03-14T10:30:00Z');
+    </script>
+
+<hr>
+<h2>JS Math</h2>
+    <p id="id73"></p>
+    <script>
+        document.getElementById('id73').innerHTML = 'Let\'s round off Euler\'s Constant using various methods : ' +
+                                                    '<br/> <i>e = ' + Math.E + '...<i/>' +
+                                                    '<br/> Using Math.round(x) : ' + Math.round(Math.E) +
+                                                    '<br/> Using Math.ceil(x) : ' + Math.ceil(Math.E) +
+                                                    '<br/> Using Math.floor(x) : ' + Math.floor(Math.E) +
+                                                    '<br/> Using Math.trunc(x) : ' + Math.trunc(Math.E) +
+                                                    '<br/><br/> Now, let\'s do other things with <i>e</i> : ' +
+                                                    '<br/> <i>e <sup>&pi;</sup></i> = ' + Math.pow(Math.E, Math.PI) +
+                                                    '<br/> <i>&pi; <sup>e</sup> </i> = ' + Math.PI**Math.E +
+                                                    '<br/> We can say : <span class=\'math\'>x/Math.abs(x) = Math.sign(x)</span>' +
+                                                    '<br/>&radic;<span style=\'text-decoration:overline;\'>16</span> = ' + Math.sqrt(16);
+    </script>
+
+<hr>
+<h2>JS Random</h2>
+    <button onclick="function14()">Get random numbers between 0 and 100</button>
+    <button onclick="function15()">Get random numbers between 0 and 10</button>
+    <button onclick="function16()">Get random numbers between -10 and 10</button>
+    <button onclick="function17()">MORE UNPREDICTABLE ! [I'm unable to calculate its range]</button>
+    <p id="id74"></p>
+    <script>
+        function function14() {
+            var random = Math.floor(Math.random()*101);
+            document.getElementById('id74').innerHTML = random; 
+        }
+
+        function function15() {
+            var random = Math.floor(Math.random()*11);
+            document.getElementById('id74').innerHTML = random;
+        }
+
+        function function16() {
+            if (Math.random() >= 0.5) {
+                decider = 1;
+            }
+            else {
+                decider = -1;
+            }
+            var random = Math.floor(Math.random()*11)*decider;
+            document.getElementById('id74').innerHTML = random;
+        }
+        function function17() {
+            if (Math.random() >= 0.5) {
+                decider = 1;
+            }
+            else {
+                decider = -1;
+            }
+            var random = (Math.floor(Math.random()*11)*decider) ** (Math.floor(Math.random()*11)*decider);
+            document.getElementById('id74').innerHTML = random;
+        }
+    </script>
+
+<hr>
+<h2>JavaScript Comparisons and Logical Operators</h2>
+    <button onclick="function18()">Toggle Text</button> <br/>
+    <p id="id75" style="display: none;">Hello, World!</p>
+    <input id='id76' type="text" onclick="function19()" value="Enter Your Age in Years"/>
+    <button onclick="function20()">SUBMIT</button>
+    <p id="id77"></p>
+    <script>
+        function function18() {
+            document.getElementById('id75').style.display = id75.style.display === 'block' ? 'none':'block';
+        }
+        function function19() {
+            document.getElementById('id76').value = '';
+        }
+        function function20() {
+            let age = document.getElementById('id76').value;
+            if(isNaN(age)){
+                var voteable = 'Please input a valid number'
+            }
+            else{
+                var voteable = (age >= 18) ? 'Old enough':'Too young';
+            }
+            document.getElementById('id77').innerHTML = voteable + ' to vote';
+        }
+    </script>
+
+<hr>
+<h2>JavaScript If, Else and Else If</h2>
+    <p id="id78"></p>
+    <script>
+        const id78 = document.getElementById('id78');
+        const hours = new Date().getHours();
+        if (hours < 11) {
+            id78.innerHTML = 'Good morning';
+        }
+        else if(hours >= 11 && hours <= 15) {
+            id78.innerHTML = 'Good after noon';
+        }
+        else if(hours > 15 && hours <= 19) {
+            id78.innerHTML = 'Good evening';
+        }
+        else if(hours > 19 && hours <= 23) {
+            id78.innerHTML = 'Good night';
+        }
+    </script>
+
+<hr>
+<h2>JavaScript Switch Statement</h2>
+    <input type="text" id="id79" value="Enter the day[full, in lower case]" onclick="function21()"><br/>
+    <button type="submit" onclick="function22()">Submit</button>
+    <p id="id80"></p>
+    <script>
+        let id80 = document.getElementById('id80');
+        function function21() {
+            document.getElementById('id79').value = '';
+        }
+        function function22() {
+            const value = document.getElementById('id79').value;
+            switch (value) {
+            case 'sunday':
+            case 'saturday':
+                id80.innerHTML  = 'Hurray! It\'s a holiday'
+                break;
+            case 'friday':
+                id80.innerHTML = 'Just face the hardship today, then chill tomorrow';
+                break;
+            case 'monday':
+            case 'tuesday':
+            case 'wednesday':
+            case 'thursday':
+                id80.innerHTML = 'There are still miles to go, before you could rest';
+                break
+            default:
+                id80.innerHTML = 'Please enter valid day.<br/> Note: Write the days in full (not Sun, Mon,etc.) <br/> And, only used small letters (not <b>S</b>unday, <b>M</b>onday, etc.)'
+        }
+        }
+    </script>
+
+<hr>
+<h2>JS Loop For</h2>
+    <label>No. of items :&ThickSpace;&ThickSpace;</label><input type="text" id="id81"><br/>
+    <label>Item :&ThickSpace;&ThickSpace;</label><input type="text" id="id82"><br/>
+    <button id="id83" onclick="function23()">ORDER &nbsp; ITEMS</button>
+    <p id="id84"></p>
+    <script>
+        function function23() {
+            let itemNum = document.getElementById('id81').value;
+            let item = document.getElementById('id82').value;
+            let text1 = '';
+            for(let i=1; i<= itemNum; i++) {
+                text1 += item + '<br/>';
+            }
+            document.getElementById('id84').innerHTML = text1;
+        }
+    </script>
+
+<hr>
+<h2>JavaScript For In</h2>
+    <p id="id85"></p>
+    <script>
+        let object = {fName:'John', lName:'Doe,', age:'35 years'}
+        let text2 = '';
+        for (var any in object){
+            text2 += object[any] + '&nbsp;';
+        }
+        document.getElementById('id85').innerHTML = text2;
+    </script>
+
+<hr>
+<h2>JavaScript For Of</h2>
+    <label for="string">Enter the text that you want to see formatted vertically: </label>
+    <input type="text" name="string" id="id86" oninput="function24()">
+    <p id="id87"></p>
+    <script>
+        function function24() {
+            let string = document.getElementById('id86').value;
+            let text3 = '';
+            for (let x of string) {
+                text3 += x + '<br/>';
+            }
+            document.getElementById('id87').innerHTML = text3;
+        }
+    </script>
+        <script src="script.js"></script>
+    </body>
+</html>

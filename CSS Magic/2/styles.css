@@ -1,0 +1,32 @@
+body{
+    min-height: 400px;
+    border: 8px solid black;
+    display: flex;
+    gap: 10px;
+    /* flex-direction:row ;
+    justify-content: center; /* for main-axis */
+    /* align-items: center; */ /* for cross-axis */
+    /* align-content: center; */
+    /* column-gap: 10px;
+    row-gap: 2px;
+    flex-wrap: wrap; */
+    align-content: start;
+    column-gap: 1px;
+    row-gap: 2px;
+}
+.box{
+    flex-shrink: 1;
+    flex-grow: 1; /* [grow & shrink] can have higher values other than boolean, but it only makes sense when used with different elements with different values assigned to it */
+    height: 100px;
+    width: 100px;
+    background-color: #0071FF;
+    font-size: 40pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width : 575px) {
+    body{
+        flex-wrap: wrap;
+    }
+}

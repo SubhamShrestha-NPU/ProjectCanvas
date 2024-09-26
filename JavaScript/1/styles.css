@@ -1,0 +1,129 @@
+/*TEMPLATES*/
+.inline{
+    display: inline;
+}
+.block{
+    display: block;
+}
+.inlineBlock{
+    display: inline-block;
+} 
+.hidden{
+    display: hidden;
+}/*FOR BETTER DISPLAY*/
+/*CUSTOM*/
+body{
+    background:linear-gradient(180deg,#0a99cd 30% , #0084ff, #0a99cd 20%);
+    height: 100vh;
+    width: 100vw;
+    color: #ffffff;
+    font-weight: lighter;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/*#testEnvironment{
+    position: fixed;
+    height: 98vh;
+    width: 50vw;
+    background: no-repeat rgba(0, 0, 0, 0);
+    margin-left: 50vw;
+    margin-right: 1vw;
+    margin-top: -2.5vh;
+    margin-bottom: 2vh;
+    color: rgba(245, 245, 245, 0);
+    font-family: monospace;
+    overflow: scroll;
+    padding: 1em;
+    font-size: 1.05em;
+    letter-spacing: 0;
+    text-wrap: wrap;
+    transition: 0.5s;
+}
+#testEnvironment:active {
+    background: rgba(0, 0, 0, 0);
+    color: rgba(255, 255, 255, 0);
+    visibility: hidden;
+}*/
+#id34 {
+    height: 30px;
+    width: 20%;
+    position: relative;
+    margin-top: 5px;
+    margin-left: 35%;
+    margin-bottom: 10px;
+    font-size: 0.6em;
+    border-radius: 30px;
+    border: 0px;
+    background: #075dbe;
+    color: azure;
+}
+#id34:hover {
+    background: #0750a3;
+}
+
+ul {
+    list-style-type: square;
+}
+li::marker {
+    color: hsl(33, 66%, 80%);
+    font-size:  1em;
+}
+li:hover::marker {
+    color: hsl(33, 66%, 60%);
+}
+li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: hsl(0, 0%, 30%);
+}
+
+.comparisonTable {
+    border-collapse: collapse;
+    background: #37a0c6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.comparisonTable td, .comparisonTable th {
+    border: 1px solid #ffffff;
+}
+.Sort {
+    position: relative;
+    height: 100px;
+    width: 90%;
+    margin: 10px 5%;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    font-weight: 525;
+}
+#id59 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.enlarge {
+    font-weight: 1000;
+    font-size: 25px;
+    font-family: cursive;
+}
+blockquote {
+    font-family: monospace;
+}
+.math {
+    font-family: monospace;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    font-style: italic;
+    line-height: 2px;
+    background-color: #0785b3;
+    height: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border-radius: 3px;
+    padding-left: 10px;
+    margin-left: -5px;
+}
+#id84 {
+    font-size: 50px;
+}

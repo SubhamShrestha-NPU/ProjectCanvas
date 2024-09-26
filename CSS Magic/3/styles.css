@@ -1,0 +1,41 @@
+body{
+    background-color: #353333;
+}
+.box {
+    position: absolute;
+    height: 50vw;
+    width: 50vw;
+    left: 25vw;
+    top: 5vw; 
+    background-color: #353333;
+    border-radius: 30px;
+}
+@property --angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0deg;
+}
+.box::after,
+.box::before {
+    content: '';
+    background-color: red;
+    position: absolute;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 30px;
+    background-image: conic-gradient(
+        from var(--angle), #ea2dd8, #001bf1, #ea2dd8
+    );
+    animation: wheel 2s linear infinite;
+    z-index: -1;   
+}
+@keyframes wheel {
+    to {
+        --angle: 360deg;
+    }
+}
+
+.box::after {
+    /* top: 50vh; */
+    filter: blur(60px);
+}

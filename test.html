@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <style>
+        .invalid {
+            color: red;
+        }
+        .valid {
+            color: green;
+        }
+    </style>
+    <title>TEST DOC</title>
+</head>
+<body>
+    <input type="text" id="inputField" placeholder="Enter expression">
+    <button onclick="calculate()">=</button>
+    <div id="result"></div>
+
+    <script>
+        function calculate() {
+    const input = document.getElementById('inputField').value;
+    try {
+        const result = eval(input); // Evaluate the expression
+        document.getElementById('result').innerText = result; // Display the result
+    } catch (error) {
+        document.getElementById('result').innerText = 'Error'; // Handle invalid expressions
+    }
+}
+
+    </script>
+<input type="text" onchange="alert('Input changed')">
+
+<br/><br/>
+<label for="password">Create your password: </label>
+<input type="password" id="password" oninput="validatePassword()"> <br/>
+<input type="checkbox" id="togglePassword" onclick="toggleVisibility()"> Show Password
+<p id="message">
+    <ul>
+        <li id="length" class="invalid">At least 8 characters</li>
+        <li id="special" class="invalid">At least 2 special characters</li>
+        <li id="uppercase" class="invalid">At least 1 uppercase letter</li>
+        <li id="number" class="invalid">At least 1 number</li>
+    </ul>
+</p>
+
+<script>
+    function validatePassword() {
+        let password = document.getElementById('password').value;
+        let lengthCondition = document.getElementById('length');
+        let specialCondition = document.getElementById('special');
+        let uppercaseCondition = document.getElementById('uppercase');
+        let numberCondition = document.getElementById('number');
+        let message = document.getElementById('message');
+
+        // Regex patterns for special characters, uppercase letters, and numbers
+        let specialPattern = /[!@#$%^&*(),.?":{}|<>]/g;
+        let uppercasePattern = /[A-Z]/g;
+        let numberPattern = /[0-9]/g;
+
+        // Validate length
+        if (password.length >= 8) {
+            lengthCondition.classList.remove('invalid');
+            lengthCondition.classList.add('valid');
+        } else {
+            lengthCondition.classList.remove('valid');
+            lengthCondition.classList.add('invalid');
+        }
+
+        // Validate special characters (at least 2)
+        if ((password.match(specialPattern) || []).length >= 2) {
+            specialCondition.classList.remove('invalid');
+            specialCondition.classList.add('valid');
+        } else {
+            specialCondition.classList.remove('valid');
+            specialCondition.classList.add('invalid');
+        }
+
+        // Validate uppercase letters (at least 1)
+        if (uppercasePattern.test(password)) {
+            uppercaseCondition.classList.remove('invalid');
+            uppercaseCondition.classList.add('valid');
+        } else {
+            uppercaseCondition.classList.remove('valid');
+            uppercaseCondition.classList.add('invalid');
+        }
+
+        // Validate numbers (at least 1)
+        if (numberPattern.test(password)) {
+            numberCondition.classList.remove('invalid');
+            numberCondition.classList.add('valid');
+        } else {
+            numberCondition.classList.remove('valid');
+            numberCondition.classList.add('invalid');
+        }
+
+        // Check if all conditions are valid
+        if (
+            lengthCondition.classList.contains('valid') &&
+            specialCondition.classList.contains('valid') &&
+            uppercaseCondition.classList.contains('valid') &&
+            numberCondition.classList.contains('valid')
+        ) {
+            // Replace the conditions list with the success message
+            message.innerHTML = '<p style="color: green;">Strong password created</p>';
+        }
+    }
+    function toggleVisibility() {
+        let passwordInput = document.getElementById("password");
+        let toggleCheckbox = document.getElementById("togglePassword");
+
+        if (toggleCheckbox.checked) {
+            passwordInput.type = "text"; // Show password
+        } else {
+            passwordInput.type = "password"; // Hide password
+        }
+    }
+</script>
+</body>
