@@ -1,7 +1,3 @@
-Certainly! Let's create a delightful README.md for your repository, **ProjectCanvas**. 🎨✨
-
----
-
 # ProjectCanvas
 An ever-evolving canvas for rapid prototyping, experiments, and wild code doodles. Whether you're a seasoned developer or just starting out, ProjectCanvas is the place to unleash your creativity. 🚀
 
@@ -29,18 +25,3 @@ Found a bug? Have an idea for a new feature? We'd love your contributions! Fork 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to customize this template further! And remember, the canvas is yours—paint it with code! 🎨✨
-
-*Happy coding,*  
-*Subham Shrestha* 😊
-
----
-
-*P.S. If you create something amazing, share it with me—I'd love to see it!*
-
----
-
-*Disclaimer: ProjectCanvas is purely fictional. But hey, maybe someone will actually build it someday!*
