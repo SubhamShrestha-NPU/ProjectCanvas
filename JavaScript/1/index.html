@@ -687,6 +687,64 @@ document.getElementById("id65").innerHTML = txt;
             document.getElementById('id87').innerHTML = text3;
         }
     </script>
+
+<hr>
+<h2>JS Loop While</h2>
+    <p id="id89"></p>
+    <script>
+        let text4 = '';
+        let i1 = 0;
+        while (i1 <= 10) {
+            text4 += i1 + '<br/>';
+            i1++;
+        }
+        /* same thing using do-while :
+        do {
+            text4 += i1 + '<br/>';
+            i++;
+        }
+        while (i1 <= 10);
+        */
+        document.getElementById('id89').innerHTML = text4;
+    </script>
+
+<hr>
+<h2>JS Iterables</h2>
+    <p id="id90"></p>
+    <script>
+       const Numeric2 = {};
+        let text5 = '';
+
+        Numeric2[Symbol.iterator] = function() {
+            let i2 = 0;
+           let done = false;
+            return {
+                next() {
+                    i2 += 10;
+                    if (i2 === 110) {done = true}
+                    return{value:i2, done:done};
+                }
+            };
+        }
+        for (const i3 of Numeric2) {
+            text5 += i3 + '<br/>';
+        }
+        document.getElementById('id90').innerHTML = text5;
+    </script>
+
+<hr>
+<h2>JS Set</h2>
+    <ul id="id91"></ul>
+    <script>
+        const set1 = new Set(['a','b','c']);
+        set1.add('d');
+        set1.add('e');
+        text6 = '';
+        for (const i4 of set1) {
+            text6 += '<li>' + i4 + '</li>';
+        }
+        document.getElementById('id91').innerHTML = 'Here are the elements of set1 displayed using for..of loop' + text6;
+    </script>
         <script src="script.js"></script>
     </body>
 </html>
