@@ -1,0 +1,114 @@
+/* font section */
+@font-face {
+    font-family: "Blue Ridge";
+    src: url(fonts/BlueRidge.otf), format(otf);
+}
+@font-face {
+    font-family: "waltograph";
+    src: url(fonts/Waltograph/waltographUI.ttf);
+}
+/* image management section */
+/**Notes:
+-- introBackground.jpeg : 1792*1024 px
+-- introBackground2.jpeg : 1024*1024 px
+**/
+.small {
+    height: 63px;
+    width: 89.1px;
+}
+#logo {
+    justify-content: flex-start;
+}
+/* header management section */
+#header {
+    position: fixed;
+    height: 7vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.76);
+    color: aliceblue;
+    margin: -8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+#table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-collapse: collapse;
+}
+#table * {
+    /*border: 1px solid red;*/
+    padding: 15px;
+    font-family: "Blue Ridge";
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.option::before {
+    content: '';
+    position: absolute;
+    background: rgb(137, 43, 226);
+}
+.option:hover::before {
+    height: 2px;
+    width: 6px;
+    animation: bottom-bar 0.25s linear 1 alternate forwards ;
+    transition: 0.5s;
+}
+@keyframes bottom-bar {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(10);
+    }
+}
+/* banner adjustment section */
+.banner {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    margin: 0 -8px;
+    background: cover center no-repeat;
+    background-image: url(images/introBackground.jpeg) ;
+    color: white;
+}
+
+/* custom adjustment section */
+.a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+} 
+#welcome{
+    font-size: 1.5em;
+    margin-bottom: 3em;
+    margin-left: 0.5em;
+    line-height: 2em;
+    letter-spacing: 0.5px;
+    height: 4em;
+    width: 20em;
+    text-wrap: wrap;
+    font-family: waltograph;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: intro 2s linear 1;
+    transition: 0.5s;
+}
+@keyframes intro {
+    from {
+        display: none;
+        transform: translateX(-200px);
+        color:hsla(0,0%,0%, 0.1);
+    }
+    to {}
+}
