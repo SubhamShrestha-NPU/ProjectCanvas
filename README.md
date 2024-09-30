@@ -23,5 +23,4 @@ An ever-evolving canvas for rapid prototyping, experiments, and wild code doodle
 Found a bug? Have an idea for a new feature? We'd love your contributions! Fork the repo, create a branch, and submit a pull request. Let's make ProjectCanvas even more colorful together. 🌈
 
 ## License
-
 This project is licensed under the [MIT License](LICENSE).
