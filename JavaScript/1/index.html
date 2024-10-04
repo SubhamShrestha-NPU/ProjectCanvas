@@ -753,6 +753,88 @@ document.getElementById("id65").innerHTML = txt;
         document.getElementById('id92').innerHTML = 'The set set1 contains an element \'a\' : ' + set1.has('a') +
                                                     '<br/> set1 has ' + set1.size + ' unique elements';
     </script>
+
+<hr>
+<h2>JavaScript Maps</h2>
+    <p id="id93"></p>
+    <script>
+        const map1 = new Map([ ["apples", 100], ["pineapples",  200], ["oranges", 300], ["jackfruits",  400] ]);
+        let text7 = '<ul>';
+        map1.forEach( function(val, key) {
+            text7 += '<li>' + key + ' = ' + val + '</li>';
+        });
+        text7 += '</ul>';
+        document.getElementById('id93').innerHTML = 'Here are the elements of map1 displayed using forEach method <br/>' + text7;
+    </script>
+
+<hr>
+<h2>JavaScript Map Methods</h2>
+    <p id="id94"></p>
+    <p id="id95"></p>
+    <p id="id96"></p>
+    <script>
+        document.getElementById('id94').innerHTML = 'map1 has ' + map1.size + ' unique elements. <br/>' +
+                                                    'map1 has \'mango\' element : ' + map1.has('mango')
+        
+        let text8 = text9 = text10 ='<ul>';
+        for (const x of map1.entries()) {
+            text8 += '<li>' +x + '</li>';
+        }
+        text8 += '</ul>'
+
+       for (const x of map1.keys()) {
+        text9 += '<li>' +x + '</li>';
+        }
+        text9 += '</ul>';
+
+        for (const x of map1.values()) {
+            text10 += '<li>' +x + '</li>';
+        }
+        text10 += '<ul/>'
+
+        /* 
+            This same key-value pair can be obtained single-handedly using forEach method:
+            map1.forEach(function (value, key) {
+                text9 += '<li>' + value + '</li>';
+                text10 += '<li>' + key + '</li>';
+            })
+            text9 += '</ul>';
+            text10 += '</ul>';
+        */
+        document.getElementById('id95').innerHTML = 'Here is the same map displayed using <em>for of loop</em> :' + text8 + 
+                                                    '<br/>Here are the keys of map1 displayed using <em>for of loop</em> :' + text9 +
+                                                    '<br/>Here are the values of map1 displayed using <em>for of loop</em> :' + text10;
+
+        const fashionProducts = [
+    {name:'Trendy T-Shirt', sales:250},
+    {name:'Leather Jacket', sales:120},
+    {name:'Skinny Jeans', sales:180},
+    {name:'Sports Shoes', sales:300},
+    {name:'Elegant Watch', sales:90},
+    {name:'Designer Handbag', sales:60},
+    {name:'Casual Socks', sales:420},
+    {name:'Winter Coat', sales:150},
+    {name:'Fashionable Scarf', sales:110},
+    {name:'Sunglasses', sales:280}
+];
+// If a product from array fashionProducts has sold more than 250 units then it is on high demand otherwise it is not on that much demand.
+        function function25 ({ sales }) {
+            return sales >= 250 ? 'high' : 'low';
+        }
+        const result = Map.groupBy(fashionProducts, function25);
+
+        let text11 = 'The products on high demand are : <ul>'
+        for (let x of result.get('high')) {
+            text11 += '<li>' + x.name + '</li>';
+        }
+        text11 += '</ul> The products on low demand are : <ul>';
+        for (let x of result.get('low')) {
+            text11 += '<li>' + x.name + '</li>';
+        }
+        text11 += '</ul>';
+        document.getElementById('id96').innerHTML = text11;
+        
+    </script>
         <script src="script.js"></script>
     </body>
 </html>

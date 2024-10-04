@@ -3,38 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useful Webpage</title>
     <style>
-        :root {
-            --box-size: 100px;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
         }
-
-        .box {
-            width: var(--box-size);
-            height: var(--box-size);
-            background-color: teal;
-            transition: width 0.5s ease, height 0.5s ease;
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            clear: both;
         }
     </style>
 </head>
 <body>
-
-<div class="box"></div>
-<button onclick="calculateAndSetBoxSize()">Resize Box</button>
-
-<script>
-    function calculateAndSetBoxSize() {
-        // Perform some calculations in JavaScript
-        const randomSize = Math.floor(Math.random() * 200) + 100;  // Random size between 100px and 300px
-        
-        // Get the root element (i.e., <html> element)
-        const root = document.documentElement;
-
-        // Set the calculated size as a new CSS variable value
-        root.style.setProperty('--box-size', randomSize + 'px');
-
-        console.log('New box size set to:', randomSize + 'px');
-    }
-</script>
-
+    <div class="container">
+        <div class="header">
+            <h1>Useful Webpage</h1>
+        </div>
+        <div class="content">
+            <h2>Welcome to our webpage!</h2>
+            <p>This webpage is designed to be useful and informative.</p>
+            <button id="myButton">Click me!</button>
+            <div id="myDiv"></div>
+        </div>
+        <div class="footer">
+            &copy; 2023 Useful Webpage
+        </div>
+    </div>
+    <script>
+        document.getElementById("myButton").addEventListener("click", function() {
+            document.getElementById("myDiv").innerHTML = "You clicked the button!";
+        });
+    </script>
 </body>
 </html>
