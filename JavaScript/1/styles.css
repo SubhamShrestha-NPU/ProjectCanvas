@@ -12,6 +12,10 @@
     display: hidden;
 }/*FOR BETTER DISPLAY*/
 /*CUSTOM*/
+@font-face {
+    font-family: Orbitron;
+    src: url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+}
 body{
     background:linear-gradient(180deg,#0a99cd 30% , #0084ff, #0a99cd 20%);
     height: 100vh;
@@ -126,4 +130,12 @@ blockquote {
 }
 #id84 {
     font-size: 50px;
+}
+#id101 {
+    width: 2em;
+    max-width: 100%;
+    box-sizing: content-box;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }

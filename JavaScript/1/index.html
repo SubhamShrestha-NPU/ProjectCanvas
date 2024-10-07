@@ -888,6 +888,62 @@ document.getElementById("id65").innerHTML = txt;
         <th>0010</th>
     </tr>
 </table>
+
+<hr>
+<h2>JavaScript RegExp [Regular Expression]</h2>
+<p id="id97"></p>
+<p id="id98"></p>
+<p id="id99" onclick="function26()"></p>
+<p id="id100"></p>
+<p>Found <input type="text" name="searchBar" value="e" id="id101" oninput="function27()"> in position <b id="id102">2</b> of the sentence : 'The best things in life are free!'</p>
+
+    <script>
+        const regex1 = 'Hello, welcome to India.';
+        let regexS1 = regex1.search('India');
+        let regexS2 = regex1.search(/hello/i);
+        function function26() {
+            const regexR1 = regex1.replace(/hello/i, 'Hi');
+            document.getElementById("id99").innerHTML = regexR1 + ' [<b>Hello</b> is replaced with <i><b>Hi</b></i>]';
+        }
+
+        document.getElementById("id97").innerHTML = `Consider the sentence : \'${regex1}\' <br/>
+                                                    The search method returned the index of the first occurance of the word \'India\' as ${regexS1}`;
+        document.getElementById("id98").innerHTML = `The word \'hello\' [case insensitive search] has index of ${regexS2}`;
+        document.getElementById("id99").innerHTML = `\'${regex1}\' [click on the text]`;
+
+        const regex2 = 'The cat chased the mouse, and the mouse ran from the cat, while the cat kept chasing the mouse.';
+        document.getElementById("id100").innerHTML =`The sentence \'${regex2}\' has repeated the words \'cat\ and \'mouse\' in the following order : \n` +
+                                                    regex2.match(/(cat|mouse)/g).join(' &rArr; ');
+        
+        function function27() {
+            let id101 = document.getElementById("id101").value;
+            const regexExe1 = /id101/.exec("The best things in life are free!");
+            document.getElementById("id102").innerHTML = regexExe1.index; 
+        }
+    </script>
+        <p id="id97"></p>
+        <p id="id98"></p>
+        <p id="id99" onclick="function26()"></p>
+        <p id="id100"></p>
+
+        <script>
+            const regex1 = 'Hello, welcome to India.';
+            let regexS1 = regex1.search('India');
+            let regexS2 = regex1.search(/hello/i);
+            function function26() {
+                const regexR1 = regex1.replace(/hello/i, 'Hi');
+                document.getElementById("id99").innerHTML = regexR1 + ' [<b>Hello</b> is replaced with <i><b>Hi</b></i>]';
+            }
+
+            document.getElementById("id97").innerHTML = `Consider the sentence : \'${regex1}\' <br/>
+                                                        The search method returned the index of the first occurrence of the word \'India\' as ${regexS1}`;
+            document.getElementById("id98").innerHTML = `The word \'hello\' [case insensitive search] has index of ${regexS2}`;
+            document.getElementById("id99").innerHTML = `\'${regex1}\' [click on the text]`;
+
+            const regex2 = 'The cat chased the mouse, and the mouse ran from the cat, while the cat kept chasing the mouse.';
+            document.getElementById("id100").innerHTML = `The sentence \'${regex2}\' has repeated the words \'cat\' and \'mouse\' in the following order : \n` +
+                                                        regex2.match(/(cat|mouse)/g).join(' &rArr; ');
+        </script>
         <script src="script.js"></script>
     </body>
 </html>
