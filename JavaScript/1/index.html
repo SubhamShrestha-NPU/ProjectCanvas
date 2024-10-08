@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<p>
+<i>
     <head>
         <meta charset="UTF-8" lang="en">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -895,7 +895,6 @@ document.getElementById("id65").innerHTML = txt;
 <p id="id98"></p>
 <p id="id99" onclick="function26()"></p>
 <p id="id100"></p>
-<p>Found <input type="text" name="searchBar" value="e" id="id101" oninput="function27()"> in position <b id="id102">2</b> of the sentence : 'The best things in life are free!'</p>
 
     <script>
         const regex1 = 'Hello, welcome to India.';
@@ -914,36 +913,35 @@ document.getElementById("id65").innerHTML = txt;
         const regex2 = 'The cat chased the mouse, and the mouse ran from the cat, while the cat kept chasing the mouse.';
         document.getElementById("id100").innerHTML =`The sentence \'${regex2}\' has repeated the words \'cat\ and \'mouse\' in the following order : \n` +
                                                     regex2.match(/(cat|mouse)/g).join(' &rArr; ');
-        
-        function function27() {
-            let id101 = document.getElementById("id101").value;
-            const regexExe1 = /id101/.exec("The best things in life are free!");
-            document.getElementById("id102").innerHTML = regexExe1.index; 
-        }
     </script>
-        <p id="id97"></p>
-        <p id="id98"></p>
-        <p id="id99" onclick="function26()"></p>
-        <p id="id100"></p>
 
-        <script>
-            const regex1 = 'Hello, welcome to India.';
-            let regexS1 = regex1.search('India');
-            let regexS2 = regex1.search(/hello/i);
-            function function26() {
-                const regexR1 = regex1.replace(/hello/i, 'Hi');
-                document.getElementById("id99").innerHTML = regexR1 + ' [<b>Hello</b> is replaced with <i><b>Hi</b></i>]';
+<hr>
+<h2>JavaScript Errors</h2>
+<p>Please enter a number between 5 and 10 (included):</p>
+<input id="id101" />
+<button id="id102" onclick="function27()">Submit</button>
+<p id="id103"></p>
+<script>
+    function function27() {
+        const error = document.getElementById('id103');
+        error.innerHTML = '';
+        let input1 = document.getElementById('id101').value;
+        try {
+            if (input1.trim() === '') {
+                error.innerHTML = "Input cannot be empty";
+                return;
             }
-
-            document.getElementById("id97").innerHTML = `Consider the sentence : \'${regex1}\' <br/>
-                                                        The search method returned the index of the first occurrence of the word \'India\' as ${regexS1}`;
-            document.getElementById("id98").innerHTML = `The word \'hello\' [case insensitive search] has index of ${regexS2}`;
-            document.getElementById("id99").innerHTML = `\'${regex1}\' [click on the text]`;
-
-            const regex2 = 'The cat chased the mouse, and the mouse ran from the cat, while the cat kept chasing the mouse.';
-            document.getElementById("id100").innerHTML = `The sentence \'${regex2}\' has repeated the words \'cat\' and \'mouse\' in the following order : \n` +
-                                                        regex2.match(/(cat|mouse)/g).join(' &rArr; ');
-        </script>
+            if (isNaN(input1)) throw "is not a number";
+            input1 = Number(input1);
+            if (input1 < 5 || input1 > 10) throw "should be between 5 and 10 (inclusive)";
+            error.innerHTML = "Input is valid";
+        } catch (err) {
+            error.innerHTML = "Input " + err;
+        } finally {
+            document.getElementById("id102").style.fontWeight = "bold";
+        }
+    }
+</script>
         <script src="script.js"></script>
     </body>
 </html>
