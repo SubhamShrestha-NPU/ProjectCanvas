@@ -1,63 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Useful Webpage</title>
     <style>
+        * {
+             text-align: center;
+        }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background: linear-gradient(45deg, #802121 20%, #d53737) no-repeat;
+            height: 100vh;
+            width: 100vw;
+            color: #dacbb7;
+            line-height: 30px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
+
+        #container {
             padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px 0 #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-        .header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
+
+        input {
+            background: #e3dddd21;
+            color:#f0c0c0;
+            border: 0;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 3px;
         }
-        .header h1 {
-            margin: 0;
+
+        input:focus,
+        input:hover,
+        input:active {
+            border: 0;
+            outline: none;
         }
-        .content {
+
+        #error {
+            background: #f8e895;
+            color: red;
+            font-size: 20px;
             padding: 20px;
-        }
-        .footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            clear: both;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 #000;
+            margin: 10px;
+            visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
+    <title>Document</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Useful Webpage</h1>
-        </div>
-        <div class="content">
-            <h2>Welcome to our webpage!</h2>
-            <p>This webpage is designed to be useful and informative.</p>
-            <button id="myButton">Click me!</button>
-            <div id="myDiv"></div>
-        </div>
-        <div class="footer">
-            &copy; 2023 Useful Webpage
-        </div>
+    <div id="container">
+        Toady is <span id="day"></span> <br />
+        After <input id="num" oninput="checker()"></input> days, it will be <span id="result"></span>
     </div>
+    <div id="error"></div>
     <script>
-        document.getElementById("myButton").addEventListener("click", function() {
-            document.getElementById("myDiv").innerHTML = "You clicked the button!";
-        });
+        "use strict";
+        const day = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const t = new Date().getDay(); //get current day
+        const result = document.getElementById('result');
+        const error = document.getElementById('error');
+
+        function checker() {
+            const value = document.getElementById('num').value;
+            if (value === "") {
+                result.innerHTML = "";
+                error.style.visibility = "visible";
+                error.innerHTML = "Input cannot be empty";
+            } else if (isNaN(value)) {
+                error.style.visibility = "visible";
+                error.innerHTML = "Input must be a number";
+            } else if (value < 0) {
+                error.style.visibility = "visible";
+                error.innerHTML = "Input should be positive"
+            }
+            else {
+                error.innerHTML = "";
+                try {
+                    const d = (Math.round(value) % 7 + t) % 7;
+                    const d2 = day[d];
+                    result.textContent = d2;
+                    error.style.visibility = 'hidden';
+                }
+                catch (err) {
+                    error.style.visibility = "visible";
+                    error.innerHTML = "Error: " + err.message;
+                }
+            }
+        }
+
+        document.getElementById('day').textContent = day[t]; // displays current day
+
+
     </script>
 </body>
+
 </html>
