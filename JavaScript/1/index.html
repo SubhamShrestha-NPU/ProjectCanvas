@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<i>
     <head>
         <meta charset="UTF-8" lang="en">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +22,7 @@
                 const m = 15; 
                 //document.write(w%m);
             </script>
-        </p>
+        </p> </span>
         <p>'Subham' is a <b><span id="id6"></span></b> type of data </p>
         <p>Applying Left Shift Assignment Operator on 12: <span id="id7"></span></p>
         <!--script>
@@ -942,6 +941,68 @@ document.getElementById("id65").innerHTML = txt;
         }
     }
 </script>
+
+<hr>
+<h2>JavaScrip Arrow Function</h2>
+    <label for="id104">Enter your name : <input type="text" name="" id="id104"></label>
+    <button id="id105" onclick="function28()">Click</button>
+    <p id="id106"></p>
+    <script>
+        "use strict";
+        let function28 = () => { 
+             let input = document.getElementById("id104").value;
+            document.getElementById('id106').innerHTML = "Hi,&nbsp;" + input
+        };
+    </script>
+
+<hr>
+<h2>JavaScript Class</h2>
+    <p id="id107"></p>
+    <script>
+        class Animal {
+            constructor(name, species, habitat, lifetime) {
+                this.name = name;
+                this.species = species;
+                this.habitat = habitat;
+                this.lifetime = lifetime;
+            }
+        }
+        const Lion = new Animal('Lion', 'Panthera leo', 'African Savannah', '10-14 years');
+        const Elephant = new Animal('Elephant', 'Loxodonta africana', 'African grasslands and forests', '60–70 years');
+        const SeaTurtle = new Animal('Sea Turtle', 'Cheloniidae', 'Oceans and coastal areas', '30–100+ years');
+
+        document.getElementById('id107').innerHTML = `Lion : <br/>
+                                                   Name : ${Lion.name} <br/>
+                                                   Species : ${Lion.species} <br/>
+                                                   Habitat : ${Lion.habitat} <br/>
+                                                   Lifetime : ${Lion.lifetime} <br/>
+                                                   <br/>
+                                                   Elephant : <br/>
+                                                   Name : ${Elephant.name} <br/>
+                                                   Species : ${Elephant.species} <br/>
+                                                   Habitat : ${Elephant.habitat} <br/>
+                                                   Lifetime : ${Elephant.lifetime} <br/>
+                                                   <br/>
+                                                   Sea Turtle : <br/>
+                                                   Name : ${SeaTurtle.name} <br/>
+                                                   Species : ${SeaTurtle.species} <br/>
+                                                   Habitat : ${SeaTurtle.species} <br/>
+                                                   Lifetime: ${SeaTurtle.lifetime}`;
+    </script>
+
+<hr>
+<h2>JavaScript Arrow Function</h2>
+    <label for="id108">Acceleration :  <input type="number" name="" id="id108" oninput="function29()"> ms<sup>-2</sup></label> <br/>
+    <label for="id109">Mass :  <input type="number" name="" id="id109" oninput="function29()"> kg</label>
+    <p id="id110"></p>
+    <script>
+        let weight = (m, a) => m*a;
+        let function29 = () => {
+            let m = document.getElementById('id109').value;
+            let a = document.getElementById('id108').value;
+            document.getElementById('id110').innerHTML = `Weight : ${weight(m,a)}N`;
+        };
+    </script>
         <script src="script.js"></script>
     </body>
 </html>
