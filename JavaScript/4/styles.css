@@ -1,156 +1,98 @@
-:root {
-    --hour : 0deg;
-    --min : 0deg;
-    --sec : 0deg;
-
-    --clockDia : 325px;
-    --clockRadius : calc(var(--clockDia) / 2);
-
-    --hLen : 100px;
-    --mLen : 110px;
-    --sLen : 120px;
-} /** Use of css variables enhances maintenance and editing. 
-/** Suppose, you want to change the clock diameter of the clock. Instead of changing all other related values, mathematical functions will handle it (using calc()) */
+* {
+    box-sizing:border-box;
+}
 body {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-
     display: flex;
-    justify-content: center;
     align-items: center;
-
-    background: linear-gradient(to bottom,#2e4053, #455a64);
-    background-size: 100% 100%;
-    background-attachment: fixed;
-}  /** The clock is centered on the screen. */
-
+    justify-content: center;
+    height: 100vh;
+}
+:root {
+    --width : 100%;
+}
 #container {
     position: relative;
-    height: 50vh;
-    width: 50vh;
-    background: red;
-
+    background: #1E1E2F;
+    max-height: 100%;
+    max-width: var(--width);
     display: flex;
-    justify-content: center;    
     align-items: center;
-}   /** The container is centered on the screen. */
-
-#clock {
-    position: relative;
-    height: var(--clockDia);
-    width: var(--clockDia);
-    background: linear-gradient(45deg,#055f18,#399aa5 100%);
-    background-size: cover;
-    /* background-image: url(https://th.bing.com/th/id/OIP.0rAoZqEmCCu7q7LeaaSMOAHaHa?pid=ImgDet&w=474&h=474&rs=1); */
-    border-radius: 50%;
-    box-shadow: -10px -10px 50px rgba(0,0,0,0.5);
-    perspective: 3000px;
-
-    display: flex;
     justify-content: center;
-    align-items: flex-start;
-}   /** The clock is set to be a circle with a linear gradient background. */
+    flex-direction: row;
+}
+#output {
+    width: var(--width);
+    height: 2em;
+    font-size: 30px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+    background-color: #E0E6ED;
+    border: none;
+    color: #212121;
+}
+#output:focus{
+    border: none;
+    outline: none;
+}
+.button {
+    height: 3em;
+    width: 100%;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: #007EA7;
+    /*color:#ECEFF4;*/
+    border: none;
+}
+.button:hover {
+    background: #0187b3;
+}
+.button:active {
+    transform: scale(0.98);
+}
+.special {
+    color :#F07167;
+}
+.special:hover {
+    color: #FFB6B9;
+}
+.numeric {
+    color: #b3eafc;
+}
+.numeric:hover {
+    color: #a3d4e5;
+}
+.operative {
+    color: #64d2fd;
+}
+.operative:hover {
+    color: #FFD700;
+}
 
-
-#hourHand,
-#minuteHand,
-#secondHand {
-    position: relative;
+#result {
+    width : var(--width);
+    height: 1em;
+    background: #E0E6ED;
+    margin: 1.5px 0 -4px;
+    color: #0081A7;
+    overflow: hidden;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.5em;
+}
+#container, .button {
     border-radius: 10px;
-    transform-origin: center bottom;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+#result {
+    border-radius: 10px 10px 0 0;
+}
+#output {
+    border-radius: 0 0 10px 10px;
 } 
-#hourHand {
-    height: var(--hLen);
-    width: 3px;
-    margin-top: calc( var(--clockRadius) - var(--hLen) ); /* ensures even space between hand's head and clock's boundary */
-    transform: rotate(var(--hour));  /* sets initial position on the basis of current time */
-    background: linear-gradient(#f4f41f, #989844);
-    animation: hour 43200s linear infinite;
-    transition: 0.5s;
-}
-#minuteHand {
-    height: var(--mLen);
-    width: 2px;
-    margin-top: calc( var(--clockRadius) - var(--mLen) ); /* ensures even space between hand's head and clock's boundary */
-    transform: rotate(var(--min)); /* sets initial position on the basis of current time */
-    background: linear-gradient(#ff9292, #b52424);
-    animation: minute 3600s linear infinite;
-    transition: 0.5s;
-}
-#secondHand {
-    height: var(--sLen);
-    width: 1px;
-    margin-top: calc( var(--clockRadius) - var(--sLen) ); /* ensures even space between hand's head and clock's boundary */
-    transform: rotate(var(--sec));  /* sets initial position on the basis of current time */
-    background: linear-gradient(#ffffff, #7c7d79);
-    animation: second 60s linear infinite;
-    transition: 0.5s;
-}
-
-@keyframes hour {
-    to {
-        transform: rotate(calc( var(--hour) + 360deg));;
-    }
-}
-@keyframes minute {
-    to {
-        transform: rotate(calc( var(--min) + 360deg));;
-    }
-}
-@keyframes second {
-    to {
-        transform: rotate(calc( var(--sec) + 360deg));
-    }
-}
-
-.mark {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  
-  font-size: 1.5em;
-  color: #eff3e8;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-#mark1 { transform: translate(-50%, -50%) rotate(-60deg) translate(135px) rotate(60deg); }
-#mark2 { transform: translate(-50%, -50%) rotate(-30deg) translate(135px) rotate(30deg); }
-#mark3 { transform: translate(-50%, -50%) rotate(0deg) translate(135px) rotate(0deg); }
-#mark4 { transform: translate(-50%, -50%) rotate(30deg) translate(135px) rotate(-30deg); }
-#mark5 { transform: translate(-50%, -50%) rotate(60deg) translate(135px) rotate(-60deg); }
-#mark6 { transform: translate(-50%, -50%) rotate(90deg) translate(135px) rotate(-90deg); }
-#mark7 { transform: translate(-50%, -50%) rotate(120deg) translate(135px) rotate(-120deg); }
-#mark8 { transform: translate(-50%, -50%) rotate(150deg) translate(135px) rotate(-150deg); }
-#mark9 { transform: translate(-50%, -50%) rotate(180deg) translate(135px) rotate(-180deg); }
-#mark10 { transform: translate(-50%, -50%) rotate(210deg) translate(135px) rotate(-210deg); }
-#mark11 { transform: translate(-50%, -50%) rotate(240deg) translate(135px) rotate(-240deg); }
-#mark12 { transform: translate(-50%, -50%) rotate(270deg) translate(135px) rotate(-270deg); }
-
-#clock:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
-    transform: translateZ(-10px);
-}
-
-#hourHand:before,
-#minuteHand:before,
-#secondHand:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.02);
-    border-radius: 10px;
-    transform: translateZ(-5px);
-}

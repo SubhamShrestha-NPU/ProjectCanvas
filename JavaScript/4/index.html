@@ -3,27 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CALCULATOR</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="clock">
-        <div id="mark1" class="mark">1</div>
-        <div id="mark2" class="mark">2</div>
-        <div id="mark3" class="mark">3</div>
-        <div id="mark4" class="mark">4</div>
-        <div id="mark5" class="mark">5</div>
-        <div id="mark6" class="mark">6</div>
-        <div id="mark7" class="mark">7</div>
-        <div id="mark8" class="mark">8</div>
-        <div id="mark9" class="mark">9</div>
-        <div id="mark10" class="mark">10</div>
-        <div id="mark11" class="mark">11</div>
-        <div id="mark12" class="mark">12</div>
-        <div id="hourHand"></div> <!-- defines hour hand -->
-        <div id="minuteHand"></div> <!-- defines minute hand -->
-        <div id="secondHand"></div> <!-- defines second hand -->
+    <div id="container">
+       <table id="table">
+        <tr>
+            <td colspan="5">
+                <p id="result"></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <input type="text" name="output" id="output" oninput="condition2()">
+            </td>
+        </tr>
+        <div id="buttonContainer">
+        <tr>
+            <td><button onclick="functionOP()" class="button special">()</button></td>
+            <!--td><button onclick="functionCP()" class="button">)</b-->
+            <td><button onclick="functionPow()" class="button operative">^</button></td>
+            <td><button onclick="functionCl()" class="button special">Cl</button></td>
+            <td><button onclick="functionDel()" class="button special">Del</button></td>
+        </tr>
+        <tr>
+        </tr>
+            <td><button onclick="function7()" class="button numeric">7</button></td>
+            <td><button onclick="function8()" class="button numeric">8</button></td>
+            <td><button onclick="function9()" class="button numeric">9</button></td>
+            <td><button onclick="functionDiv()" class="button operative">÷</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="function4()" class="button numeric">4</button></td>
+            <td><button onclick="function5()" class="button numeric">5</button></td>
+            <td><button onclick="function6()" class="button numeric">6</button></td>
+            <td><button onclick="functionMul()" class="button operative">×</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="function1()" class="button numeric">1</button></td>
+            <td><button onclick="function2()" class="button numeric">2</button></td>
+            <td><button onclick="function3()" class="button numeric">3</button></td>
+            <td><button onclick="functionMin()" class="button operative">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="function0()" class="button numeric">0</button></td>
+            <td><button onclick="functionDeci()" class="button operative">•</button></td>
+            <td><button onclick="functionEq()" class="button operative">=</button></td>
+            <td><button onclick="functionPl()" class="button operative">+</button></td>
+        </tr>
+     </div>
+       </table>   
     </div>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
