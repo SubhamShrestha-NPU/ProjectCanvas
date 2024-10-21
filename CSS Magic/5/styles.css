@@ -1,0 +1,109 @@
+@import url(framework.css);
+@font-face {
+    font-family: "voltec";
+    src: url(assets/fonts/voltec/Voltec\ Free\ Version.otf) format("opentype"),
+         url(assets/fonts/voltec/Voltec\ Free\ Version.ttf) format("truetype");
+}
+/*! Ground settings */
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0vmin;
+    overflow: hidden;
+    color: white !important;
+}
+
+#preLoad, #postLoad {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+#preLoad {
+    background: #1b1a1a;
+    z-index: 2;
+   opacity: 0; /*todo: delete this */
+    visibility: hidden; /*todo: delete this*/
+}
+#postLoad {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+   opacity: 1;/*todo: change to 0 */
+   visibility: visible; /*todo: change to none */
+}
+#Ellipse1 {
+    fill: #A8A689;
+}
+/*! Functionality settings  */
+#postLoad {
+    background: #121212;
+}
+.slide {
+    background-size: cover;
+    width: -100vw;
+    height: 100vh;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.text-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #212020;
+    width: 100%;
+    height: 100%;
+    color:white;
+    font-size: 4em;
+    font-weight: 900;
+    font-family: voltec;
+    text-align: center;
+    letter-spacing: 0.1em;
+    mix-blend-mode: multiply;
+    animation: appear 5s ease-in-out forwards;
+}
+#slide1 *{
+    animation: slideL 10s  ease-in-out forwards;
+    z-index: 1;
+    /* display: none; */
+}
+
+#slide2 *{
+    /*animation: slideR 10s ease-in-out forwards; */
+    z-index: 0;
+}
+#ch1_1_H {
+    font-size: 2em;
+    animation: appear 5s linear forwards, 
+               zoomOut 10s linear forwards;
+    transition: all 0.2s;
+    text-align: center;
+}
+@keyframes zoomOut {
+    50% {
+        font-size: 2em;
+    }
+    80% {
+        font-size: 500em;
+        opacity: 1;
+    }
+    90% {
+        /* font-size: 500em; */
+        opacity: 0.3;
+    }
+    100% {
+        font-size: 500em;
+        opacity: 0;
+    }
+}
+#ch1_1 {
+    opacity: 0;
+}

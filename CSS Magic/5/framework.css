@@ -1,0 +1,79 @@
+.centerH, .centerV,
+.startH, .endH,
+.startV, .endV,
+.fdRow, .fdCol{
+    display: flex;
+}
+.centerH { justify-content: center; }
+.centerV { align-items: center; }
+.startH { justify-content: flex-start;}
+.endH { justify-content: flex-end; }
+.startV {align-items: flex-start;}
+.endV { align-items: flex-end }
+.fdRow { flex-direction: row; }
+.fdCol { flex-direction: column; }
+
+.voltec {
+    font-family: voltec;
+}
+
+@keyframes toggle {
+    0% {}
+
+    100% {
+        transform: translateX(90px);
+    }
+}
+@keyframes appear {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.mediumImg {
+    width: 100px;
+    height: auto;
+}
+
+@keyframes slideU {
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translateY(-100vh);
+        display: none;
+    }
+}
+@keyframes slideD {
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translateY(100vh);
+        display: none;
+    }
+}
+@keyframes slideL {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+@keyframes slideR {
+    0% {
+    transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100vw);
+    }
+}

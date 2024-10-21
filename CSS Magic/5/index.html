@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="centerH centerV">
+    <div id="preLoad" class="centerH centerV">
+        <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" id="preBtn" onclick="ctrlBtn()" class="centerH centerV">
+            <defs>
+                <!-- Set the pattern size to cover the entire SVG canvas -->
+                <pattern id="imgPattern" patternUnits="userSpaceOnUse" width="400" height="400">
+                    <image
+                        href="https://images.unsplash.com/photo-1676302477502-fa8a634aaa8e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D"
+                        x="0" y="0" width="400" height="400" />
+                </pattern>
+            </defs>
+        
+            <!-- Apply the image pattern to both shapes -->
+            <rect id="Rectangle1" x="100" y="150" width="200" height="100" rx="50" fill="url(#imgPattern)" />
+            <circle id="Ellipse1" cx="155" cy="200" r="45"/>
+        </svg>
+    </div>
+
+    <div id="postLoad" class="centerH">
+        <div id="slide1" class="slide centerH centerV">
+            <div class="container centerH centerV">
+                <video autoplay loop muted>
+                    <source src="assets/videos/seaWaves.mp4" type="video/mp4">
+                </video>
+                <div class="text-box centerH centerV">
+                    <h1 class="centerH centerV voltec">THE COSMIC QUEST</h1>
+                </div>
+            </div>
+        </div>
+
+        <div id="slide2" class="slide voltec centerV">
+            <p id="ch1_1_H">THE ORIGINS OF ASTRONOMY</p>
+            <div id="ch1_1">
+                hi
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
