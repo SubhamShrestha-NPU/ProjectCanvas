@@ -16,11 +16,30 @@
     font-family: Orbitron;
     src: url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
 }
-body{
-    background:linear-gradient(180deg,#0a99cd 30% , #0084ff, #0a99cd 20%);
+ body{
+    /* background:linear-gradient(180deg,#0a99cd 30% , #0084ff, #0a99cd 20%); */
+    /* background: #121212; */
+    background: linear-gradient(0deg, #1a1a2e, #16213e, #1a1a2e);/* Dark gradient background */
+    background-repeat: repeat;
+    background-size: cover;
     height: 100vh;
     width: 100vw;
-    color: #ffffff;
+    /* color: #ffffff; */
+    color:#e0e0e0;
+    font-weight: lighter;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} */
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    /* Dark gradient background */
+    background-repeat: no-repeat;
+    /* Prevent background from repeating */
+    background-size: cover;
+    /* Ensure background covers the entire viewport */
+    height: 100vh;
+    width: 100vw;
+    color: #e0e0e0;
+    /* Light text color for contrast */
     font-weight: lighter;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -47,6 +66,16 @@ body{
     color: rgba(255, 255, 255, 0);
     visibility: hidden;
 }*/
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: #ffffff;
+    text-decoration: underline;
+}
 #id34 {
     height: 30px;
     width: 20%;
@@ -82,10 +111,14 @@ li:hover {
 
 .comparisonTable {
     border-collapse: collapse;
-    background: #37a0c6;
+    background: linear-gradient(45deg, #1a1a2e,#004d40, #1a1a2e);/* Harmonized greenish-blue gradient background */
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;/* Ensure the table takes up the full width of its container */
+    padding: 10px;/* Add padding to control spacing inside the table */
+    margin: 0 auto;/* Center the table within its container */
 }
 .comparisonTable td, .comparisonTable th {
     border: 1px solid #ffffff;
