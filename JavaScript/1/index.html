@@ -10,7 +10,7 @@
         <div id="testEnvironment">
         </div>
         <script src="testEnvironment.js"></script>
-        <p id="id1"></p> <!--getElementById() METHOD IS USED-->
+        <p id="id1"></p> <getElementById() METHOD IS USED-->
         <p>2 + 3 = <span id="id2"></span></p>
         <p>NAME : <span id="id3"></span></p>
         <p>ARRAY : <span id="id4"></span></p>
@@ -69,7 +69,8 @@
         document.getElementById("id15").innerHTML = + text.charCodeAt(0);
     </script>
 
-<hr>
+<hr><hr>
+<h1>JS Tutorial</h1>
 
 <h2>JS String Search</h2>
     <p>The word 'attitude' in the sentence <br>
@@ -372,7 +373,7 @@
             }
 
             function function7 () {
-               for (let int = Numeric.length - 1; int > 0; int--) {
+               for (let int = Numeric.lengtwh - 1; int > 0; int--) {
                     let jnt = Math.floor(Math.random() * (int+1));
                     let k = Numeric[int];
                     Numeric[int] = Numeric[jnt];
@@ -1002,6 +1003,28 @@ document.getElementById("id65").innerHTML = txt;
             let a = document.getElementById('id108').value;
             document.getElementById('id110').innerHTML = `Weight : ${weight(m,a)}N`;
         };
+    </script>
+
+<hr><hr>
+<h1><u>JS Objects</u></h1>
+<h2>JS Object Definitions</h2>
+    <p id="id111"></p>
+    <script>
+        function Person(fName, lName, age, gender) {
+            this.firstName = fName;
+            this.lName = lName;
+            this.age = age;
+            this.gender = gender;
+            this.country = 'India'; //Default value, same for everybody
+        } //Object constructor
+        
+        //Example usage:
+        let Father = new Person('Raju', 'Shrestha', 40, 'Male');
+        let Mother = new Person('Raju', 'Shrestha', 40, 'Female');
+        let Child = new Person('Subham', 'Shrestha', 14, 'Male');
+        document.getElementById('id111').innerHTML = `Father <br/> First Name : ${Father.firstName} <br/> Last Name : ${Father.lName} <br/> Age : ${Father.age}  <br/> Gender : ${Father.gender} <br/> Country : ${Father.country} <br/><br/>` +
+                                                     `Mother <br/> First Name : ${Mother.firstName} <br/> Last Name : ${Mother.lName} <br/> Age : ${Mother.age} <br/> Gender : ${Mother.gender} <br/> Country : ${Mother.country} <br/><br/>` +
+                                                     `Child <br/> First Name : ${Child.firstName} <br/> Last Name : ${Child.lName} <br/> Age : ${Child.age} <br/> Gender : ${Child.gender} <br/> Country : ${Child.country} <br/><br/>`;
     </script>
         <script src="script.js" defer="true"></script>
     </body>
