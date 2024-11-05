@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            overflow: hidden;
+        }
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100lvw;
+            height: 100lvh;
+        }
+        #ball {
+            background: conic-gradient(#000000, #252525, #000000, #252525, #000000);
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+        }
+        @keyframes bounce {
+            0% {}
+            50% {
+                transform: translateY(-45vh);
+            }
+            75% {
+                transform: translateY(45vh);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button id="ball" onclick="bounce()"></button>
+    </div>
+    <script>
+        let i = 0;
+        while (i < 10) {
+            bounce = () => {
+                document.getElementById('ball').style.animation = 'bounce 3s linear forwards';
+                i++;
+            }
+        }
+    </script>
+</body>
+</html>
