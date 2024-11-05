@@ -6,6 +6,7 @@
         <link rel="icon" href="C:/Users/subha/OneDrive/Desktop/Code/CSS Magic/images/proIMGbg.png">
         <link rel="stylesheet" href="styles.css">
     </head>
+    <body>
     <span>
         <div id="testEnvironment">
         </div>
@@ -21,6 +22,9 @@
                 const w = 34; 
                 const m = 15; 
                 //document.write(w%m);
+                function print(x, y) {
+                        document.getElementById(x).innerHTML = y;
+                }
             </script>
         </p> </span>
         <p>'Subham' is a <b><span id="id6"></span></b> type of data </p>
@@ -1010,7 +1014,7 @@ document.getElementById("id65").innerHTML = txt;
 <h2>JS Object Definitions</h2>
     <p id="id111"></p>
     <script>
-        function Person(fName, lName, age, gender) {
+        function Person(fName, lName, age, gender, eye_color) {
             this.firstName = fName;
             this.lName = lName;
             this.age = age;
@@ -1026,6 +1030,45 @@ document.getElementById("id65").innerHTML = txt;
                                                      `Mother <br/> First Name : ${Mother.firstName} <br/> Last Name : ${Mother.lName} <br/> Age : ${Mother.age} <br/> Gender : ${Mother.gender} <br/> Country : ${Mother.country} <br/><br/>` +
                                                      `Child <br/> First Name : ${Child.firstName} <br/> Last Name : ${Child.lName} <br/> Age : ${Child.age} <br/> Gender : ${Child.gender} <br/> Country : ${Child.country} <br/><br/>`;
     </script>
+
+    <hr>
+    <h2>JS Object Prototype</h2>
+    <p id="id112"></p>
+    <script>
+        // Correctly define the prototype property
+            Person.prototype.eye_color = '';
+
+        // Create a new Child object with the correct parameters
+        let ChildWithEyeColor = new Person('Subham', 'Shrestha', 14, 'Male');
+        ChildWithEyeColor.eye_color = 'Brown';
+
+        // Display the eye color of the child
+        document.getElementById('id112').innerHTML = `Child's Eye Color : ${ChildWithEyeColor.eye_color}`;
+    </script>
+
+    <h2>JS Object Method</h2>
+    <p id="id113"></p>
+    <p id="id114"></p>
+    <p id="id115"></p>
+    <p id="id116"></p>
+    <p id="id117"></p>
+    <script>
+        let Someone = { fName: 'Jon', lName: 'Doe', age: 21, height: `${6}ft ${2}in` };
+        let updatedSomeone = { fName: 'Kay', lName: 'Smith' };
+
+        document.getElementById('id113').innerHTML = `Name: ${Someone.fName} ${Someone.lName} [Before using Object.assign]`;
+
+        // Update properties of Someone with values from updatedSomeone
+        Object.assign(Someone, updatedSomeone);
+        document.getElementById('id114').innerHTML = `Name: ${Someone.fName} ${Someone.lName} [After using Object.assign]`;
+
+        let text12 = "";
+        for (let [key, value] of Object.entries(Someone)) {
+            text12 += '<b>' + key + '</b>&nbsp; &nbsp;' + ":&nbsp; &nbsp;" + value + "<br>";
+        }
+        document.getElementById("id115").innerHTML = text12;
+    </script>
+
         <script src="script.js" defer="true"></script>
-    </body>hhh
+    </body>
 </html>
