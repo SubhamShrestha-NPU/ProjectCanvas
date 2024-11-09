@@ -1069,6 +1069,38 @@ document.getElementById("id65").innerHTML = txt;
         document.getElementById("id115").innerHTML = text12;
     </script>
 
+<hr>
+<h2>JavaScript Object Properties</h2>
+    <p id="id118"></p>
+    <p id="id119"></p>
+    <p id="id120"></p>
+    <p id="id121"></p>
+    <p id="id122"></p>
+    <p id="id123"></p>
+    <script>
+        const illegalArm = {
+            "name": "AK-47", //wrong value given, rectified later
+            "weight": "2.5 kg",
+            "length": "838 mm",
+            "muzzleVelocity": "853 m/s",
+            "effectiveRange": "550 m",
+            "manufacturer": "Colt's Manufacturing Company",
+            "caliber": "5.56 mm",
+            "rateOfFire": "700-950 rounds/min",
+            "magazineCapacity": "20 or 30 rounds",
+            "countryOfOrigin": "United States"
+            //added one property later, i.e, yearIntroduced 
+        };
+        Object.defineProperty(illegalArm, "yearIntroduced", {value: 1964, configurable: false});
+        Object.defineProperty(illegalArm, "name", {value: "M16"});
+        Object.defineProperty(illegalArm, "countryOfOrigin", {writable: false, enumerable: true});
+        let text14 = '';
+        for (let key in illegalArm) {
+            text14 += '<b>' + key + '</b> : &nbsp; &nbsp; <i>' + illegalArm[key] + '</i><br>';
+        }
+        document.getElementById('id118').innerHTML = text14;
+        document.getElementById('id119').innerHTML = 'Here are the lists of all property names of the Object <i>illegalArm</i> <br/>' + Object.getOwnPropertyNames(illegalArm).join('<br>');
+    </script>
         <script src="script.js" defer="true"></script>
     </body>
 </html>
