@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
     <head>
         <meta charset="UTF-8" lang="en">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1101,6 +1102,71 @@ document.getElementById("id65").innerHTML = txt;
         document.getElementById('id118').innerHTML = text14;
         document.getElementById('id119').innerHTML = 'Here are the lists of all property names of the Object <i>illegalArm</i> <br/>' + Object.getOwnPropertyNames(illegalArm).join('<br>');
     </script>
+
+<hr>
+<h2>Object Get/Set</h2>
+    <p id="id124"></p>
+    <script>
+        let car = {
+            make: "Toyota",
+            model: "Corolla",
+            year: 2015,
+            color: "silver",
+            mileage: 100000,
+            get mile() {
+                return this.mileage;
+            },
+            set newColor(color) {
+                this.color = color.toUpperCase();
+            }
+        };
+        car.newColor = 'Red';
+        let text15 = '';
+        for (let i in car) {
+            // Skip the setter method in the loop
+            if (i !== 'newColor' && i !== 'mile') {
+                text15 += i + ': ' + car[i] + '<br>';
+            }
+        }
+        document.getElementById('id124').innerHTML = text15;
+    </script>
+
+<hr>
+<h2>JavaScript Object Protection</h2>
+    <p id="id125"></p>
+    <p id="id126"></p>
+    <p id="id127"></p>
+    <p id="id128"></p>
+    <script>
+        "use strict";
+        //Object.preventExtensions(car); //No more properties acn be added
+        Object.defineProperty(car, 'countryOfOrigin', {value:'Japan', writable: false, enumerable: true, configurable: true}); //Cannot be added
+        Object.defineProperty(car, 'color', {value: 'black'}); //neither be changed
+        document.getElementById('id125').innerHTML = car.countryOfOrigin +
+                                                    '<br/> The color of the car is : ' + car.color; //try uncommenting out the line where Object.preventExtensions(car); is written
+        //Object.preventExtensions(car);
+        document.getElementById('id126').innerHTML = Object.isExtensible(car); //try uncommenting the previous line
+
+        //car.seal(); //No more properties can be added, removed [existing properties can be changed]
+        document.getElementById('id127').innerHTML = Object.isSealed(car); //try uncommenting the previous line
+        //car.freeze(); //Only readable
+        document.getElementById('id128').innerHTML = Object.isFrozen(car); //try uncommenting the previous line
+
+    </script>
+
+<hr><hr>
+<h1>JS Functions</h1>
+<h2>JavaScript Functions</h2>
+    <input type="text" id="id129" onchange="function30()"></input>
+    <p id="id130"><i>[press tab or enter to submit]</i></p>
+    <script>
+        let function30 = function () {
+            let input2 = document.getElementById('id129').value;
+            let reversedString = input2.split('').reverse().join('');
+            document.getElementById('id130').innerHTML = reversedString;
+        } // this function itself has no name (anonymous function), but the variable in which is stored is named as function30
+          // we invoke the function by calling it with the variable name
+    </script>
         <script src="script.js" defer="true"></script>
     </body>
-</html>
+</html
