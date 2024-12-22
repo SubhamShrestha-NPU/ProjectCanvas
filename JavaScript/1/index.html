@@ -7,7 +7,7 @@
         <link rel="icon" href="C:/Users/subha/OneDrive/Desktop/Code/CSS Magic/images/proIMGbg.png">
         <link rel="stylesheet" href="styles.css">
     </head>
-    <body>
+    <>
     <span>
         <div id="testEnvironment">
         </div>
@@ -1157,7 +1157,7 @@ document.getElementById("id65").innerHTML = txt;
 <hr><hr>
 <h1>JS Functions</h1>
 <h2>JavaScript Functions</h2>
-    <input type="text" id="id129" onchange="function30()"></input>
+    <input type="text" id="id129" onchange="function30()" />
     <p id="id130"><i>[press tab or enter to submit]</i></p>
     <script>
         let function30 = function () {
@@ -1167,6 +1167,28 @@ document.getElementById("id65").innerHTML = txt;
         } // this function itself has no name (anonymous function), but the variable in which is stored is named as function30
           // we invoke the function by calling it with the variable name
     </script>
+
+<hr>
+<h2>Functions Parameters</h2>
+    <input type="text" id="id131" onchange="function31()"/>
+    <p id="id132"><i>Press Tab or Enter after entering the list of numbers separated by commas</i></p>
+    <script>
+        const id131 = document.getElementById('id131');
+        function function31() {
+            let input3 = id131.value.split(',').map(Number); //stores the input
+            var max = function32(...input3); // spreads the input string and pass it for further processing (by calling functioning functioning function32)
+            document.getElementById('id132').innerHTML = max; //displays the result
+        }
+        function function32() {
+                var max = -Infinity; //takes the lowest possible value for comparison
+                for (let i = 0; i < arguments.length; i++) {
+                    if (arguments[i] > max) {
+                        max = arguments[i];
+                    } //updates only when the argument is greater than the pressed argument
+                }
+                return max; //returns the maximum value after refinement
+            }
+    </script>
         <script src="script.js" defer="true"></script>
     </body>
-</html
+</html>
