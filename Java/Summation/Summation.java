@@ -9,6 +9,8 @@ public  static void main(String args[])
 	System.out.println("Enter the second number");
 	Scanner b=new Scanner(System.in);
 	int y=b.nextInt();
-	System.out.println("Your summation:"+(x+y));
+	System.out.println("Your summation:" + (x + y));
+	a.close();
+	b.close();
 	}
 }

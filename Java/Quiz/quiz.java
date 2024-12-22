@@ -268,6 +268,17 @@ class Quiz {
         System.out.println("");
         System.out.println("YOUR RESULT:");
         System.out.println("YOUR TOTAL SCORE:"+score+" points");
-        System.out.println("YOU ANSWERED "+(score*2)+"% OF THE QUESTIONS CORRECT"); // (score/50)*100 = score*2
+        System.out.println("YOU ANSWERED " + (score * 2) + "% OF THE QUESTIONS CORRECT"); // (score/50)*100 = score*2
+        a1.close();
+        a2.close();
+        a3.close();
+        a4.close();
+        a5.close();
+        a6.close();
+        a7.close();
+        a8.close();
+        a9.close();
+        a10.close();
+        
     }
 }

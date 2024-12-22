@@ -39,7 +39,7 @@ class Test {
             predictedHeight = 42.1 + 0.579 * (height + averageParentHeight) + 0.161 * weight - 0.00018 * weight * weight - 0.00013 * (height + averageParentHeight) * (height + averageParentHeight);
         }
 
-        System.out.println(name + ", YOUR PREDICTED ADULT HEIGHT IS " + predictedHeight + " cm");
+        System.out.println(name + "(" + age + " years)" + ", YOUR PREDICTED ADULT HEIGHT IS " + predictedHeight + " cm");
 
         scanner.close();
     }
