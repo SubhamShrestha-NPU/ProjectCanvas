@@ -15,8 +15,10 @@ class BMIcalculator {
             category = "Normal";
         } else if (bmi <= 30) {
             category = "Overweight";
-        } else {
+        } else if (bmi >= 40) {
             category = "Obese";
+        } else {
+            category = "Invalid input";
         }
         System.out.println("Your BMI is: " + bmi + "(" + category + ")");
         sc.close();
