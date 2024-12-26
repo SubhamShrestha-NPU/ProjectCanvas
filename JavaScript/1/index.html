@@ -1189,6 +1189,23 @@ document.getElementById("id65").innerHTML = txt;
                 return max; //returns the maximum value after refinement
             }
     </script>
+
+<hr>
+<h2>Function Call</h2>
+<p id="id133"></p>
+    <script>
+        const object1 = {
+            fullName: function(city, country) 
+            {
+                return this.firstName + ' ' + this.lastName + ', lives in  ' + city + ', ' + country + '.';
+            }
+        };
+        const object2 = {
+            firstName: 'John',
+            lastName: 'Doe'
+        };
+        document.getElementById('id133').innerHTML = object1.fullName.call(object2, 'Kolkata', 'India');
+    </script>
         <script src="script.js" defer="true"></script>
     </body>
 </html>
