@@ -1204,7 +1204,18 @@ document.getElementById("id65").innerHTML = txt;
             firstName: 'John',
             lastName: 'Doe'
         };
-        document.getElementById('id133').innerHTML = object1.fullName.call(object2, 'Kolkata', 'India');
+        document.getElementById('id133').innerHTML = object1.fullName.call(object2, 'Kolkata', 'India'); //Takes arguments as list
+    </script>
+
+<hr>
+<h2>Function Apply</h2>
+<p id="id134"></p>
+    <script>
+        const object3 = {
+            firstName: 'Marry',
+            lastName: 'Doe'
+        }
+        document.getElementById('id134').innerHTML = object1.fullName.apply(object3, ['Kolkata', 'India']); //takes arguments as array
     </script>
         <script src="script.js" defer="true"></script>
     </body>
