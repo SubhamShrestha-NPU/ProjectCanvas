@@ -1218,6 +1218,24 @@ document.getElementById("id65").innerHTML = txt;
         }
         document.getElementById('id134').innerHTML = object1.fullName.apply(object3, ['Kolkata', 'India']); //takes arguments as array
     </script>
+
+<hr>
+<h2>JavaScript Closures</h2>
+<p id="id135">0</p>
+<button id="id136" onclick="function33()">CLICK ME</button>
+<script>
+    function myCounter() {
+        let counter = 0;
+        return function() {
+            counter++;
+            return counter;
+        }
+    }
+    const add = myCounter();
+    function function33() {
+        document.getElementById('id135').innerHTML = add();
+    }
+</script>
         <script src="script.js" defer="true"></script>
     </body>
 </html>
