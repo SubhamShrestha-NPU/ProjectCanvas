@@ -1236,6 +1236,110 @@ document.getElementById("id65").innerHTML = txt;
         document.getElementById('id135').innerHTML = add();
     }
 </script>
+
+<hr><hr>
+<h1>JS Classes</h1>
+<h2>JavaScript Classes</h2>
+<label for="species">Select the species under <span class="highlight">Equus</span></label> <br /><br />
+<select name="species" id="species" onchange="function34(this.value)">
+    <option value="CTA" disabled selected>Choose the Animal</option>
+    <option value="ferus">Wild Horse</option>
+    <option value="africanus">African Wild Ass</option>
+    <option value="grevyi">Grevy's Zebra</option>
+    <option value="quagga">Plains Zebra</option>
+    <option value="zebra">Mountain Zebra</option>
+</select>
+
+<p id="id137"></p>
+    <script>
+        class Equus {
+            constructor(species, habitat, lifetime) {
+                this.species = species;
+                this.habitat = habitat;
+                this.lifetime = lifetime;
+                this.diet = "Herbivore";
+                this.dentition = "Hypsodont teeth";
+            }
+        }
+        
+        const ferus = new Equus('Equus ferus', 'Grasslands, plains, and steppes of Europe, Asia, and North America', '25-30 years');
+        const africanus = new Equus('Equus africanus', 'Deserts and semi-arid regions of Africa (Eritrea, Ethiopia, Somalia)', '20-30 years');
+        const grevyi = new Equus('Equus grevyi', 'Dry grasslands and savannas of Kenya and Ethiopia', '20-25 years');
+        const quagga = new Equus('Equus quagga', 'Grasslands, savannas, and woodlands across Africa', '20-30 years');
+        const zebra = new Equus('Equus zebra', 'Rocky, mountainous regions of South Africa and Namibia', '25-30 years');
+        
+        // Create an object to store the instances
+        const equusInstances = {
+            ferus: ferus,
+            africanus: africanus,
+            grevyi: grevyi,
+            quagga: quagga,
+            zebra: zebra
+        };
+
+        function function34(selectedValue) {
+            const selectedEquus = equusInstances[selectedValue];
+            
+            if (selectedEquus) {
+                document.getElementById("id137").innerHTML = `<b>Scientific Name :</b> ${selectedEquus.species} <br />
+                                                              <b>Habitat :</b> ${selectedEquus.habitat} <br />
+                                                              <b>Lifetime :</b> ${selectedEquus.lifetime}`;
+            } else {
+                document.getElementById("id137").innerHTML = "No information available for the selected species";
+            }
+        }
+    </script>
+
+<hr>
+<h2>JavaScript Inheritance</h2>
+<label for="breeds">Choose the breed of <span class="highlight">Equus ferus</span></label><br /> <br />
+<select name="breeds" id="breeds" onchange="function35(this.value)">
+    <option value="CTA" disabled selected>Choose the Breed</option>
+    <option value="tarpan">Tarpan</option>
+    <option value="przewalski">Przewalski's Horse</option>
+    <option value="konik">Konik</option>
+    <option value="exmoor">Exmoor Pony</option>
+    <option value="icelandic">Icelandic Horse</option>
+</select>
+
+<p id="id138"></p>
+    <script>
+        class FerusBreed extends Equus {
+            constructor(breed, scientificName, weight, height) {
+                super(ferus.species, ferus.habitat, ferus.lifetime);
+                this.breed = breed;
+                this.scientificName = scientificName;
+                this.weight = weight;
+                this.height = height;
+            }
+        }
+
+        const tarpan = new FerusBreed('Tarpan', 'Equus ferus ferus', '300-400', '130-140');
+        const przewalskisHorse = new FerusBreed("Przewalski's Horse", 'Equus ferus przewalskii', '250-350', '120-145');
+        const konik = new FerusBreed('Konik', 'Equus ferus gmelini', '300-400', '130-140');
+        const exmoorPony = new FerusBreed('Exmoor Pony', 'Equus ferus caballus', '200-300', '110-130');
+        const icelandicHorse = new FerusBreed('Icelandic Horse', 'Equus ferus islandicus', '350-450', '130-140');
+
+        const ferusBreedInstances = {
+            tarpan: tarpan,
+            przewalskisHorse: przewalskisHorse,
+            konik: konik,
+            exmoor: exmoorPony,
+            icelandic: icelandicHorse
+        }
+
+        function function35(val) {
+            const selectedBreed = ferusBreedInstances[val];
+            if (selectedBreed) {
+                document.getElementById("id138").innerHTML = `<b>Breed : </b> ${selectedBreed.breed} <br />
+                                                              <b>Scientific Name : </b> ${selectedBreed.scientificName} <br />
+                                                              <b>Weight : </b> ${selectedBreed.weight} kg <br />
+                                                              <b>Height : </b> ${selectedBreed.height} cm`;
+            } else {
+                document.getElementById("id138").innerHTML = "No information available for the selected breed";
+            }
+        }
+    </script>
         <script src="script.js" defer="true"></script>
     </body>
 </html>

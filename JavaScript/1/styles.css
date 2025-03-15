@@ -172,3 +172,13 @@ blockquote {
     border: 1px solid #ccc;
     border-radius: 3px;
 }
+
+.highlight {
+    background: linear-gradient(45deg, #5d5dcf6e, #181891b9, #5d5dcf6e);/* Harmonized greenish-blue gradient background */
+    border-radius: 5px;
+    padding: 5px;
+    width: max-content;
+    height: max-content;
+    display: inline-block;
+    backdrop-filter: blur(50px);
+}
