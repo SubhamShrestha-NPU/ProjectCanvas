@@ -1362,6 +1362,22 @@ document.getElementById("id65").innerHTML = txt;
         let car1 = new Car('Coretora', 'BMW', 'X5', 2500);
         document.getElementById('id139').innerHTML = Car.speed(car1);
     </script>
+
+<hr><hr>
+<h1>JS Async</h1>
+
+<h2>JavaScript Callbacks</h2>
+<p id="id140"></p>
+<button onclick="function37('This is a callback', function36)">CLICK ME</button>
+    <script>
+        function function36(x) {
+            document.getElementById('id140').innerHTML = x;
+        }
+
+        function function37(value, callback) {
+            callback(value);
+        }
+    </script>
         <script src="script.js" defer="true"></script>
     </body>
 </html>
