@@ -1378,6 +1378,29 @@ document.getElementById("id65").innerHTML = txt;
             callback(value);
         }
     </script>
+
+<hr>
+<h2>Asynchronous JavaScript</h2>
+<button id="id141" onclick="function38()">Click Me</button>
+<p id="id142"></p>
+    <script>
+        function function38() {
+            document.getElementById('id141').innerHTML = 'Loading...';
+            document.getElementById('id142').innerHTML = null;
+            setTimeout(function39, 1000);
+        }
+        function function39() {
+            document.getElementById('id141').innerHTML = 'Loaded';
+            let d = new Date();
+            setInterval(function40, 1000);
+        }
+        function function40() {
+            let d = new Date();
+            document.getElementById('id142').innerHTML =    d.getHours() + ":" +
+                                                            d.getMinutes() + ":" +
+                                                            d.getSeconds();;
+        }
+    </script>
         <script src="script.js" defer="true"></script>
     </body>
 </html>
