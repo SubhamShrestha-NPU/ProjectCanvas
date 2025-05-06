@@ -1408,20 +1408,20 @@ document.getElementById("id65").innerHTML = txt;
 <p id="id143"></p>
 
     <script>
-        let myPromise = new Promise(function(resolve, reject) {
+        let myPromise = new Promise(function(resolve, reject) { // The first param takes the resolve and the last one the reject
             let randNum = Math.random();
             if (randNum <= 0.5) {
-                resolve(`Success! The number is ${randNum}`);
+                resolve(`Success! The number is ${randNum}`); // Resolve has the value of the success message
             } else {
-                reject(`Failure! The number is ${randNum}`);
+                reject(`Failure! The number is ${randNum}`); // Reject has the value of the success message
             }
         });
             myPromise
                 .then((message) => {
-                    document.getElementById('id143').innerHTML = message;
-            })
+                    document.getElementById('id143').innerHTML = message; // Describes what to do with the resolve param when the work is successful
+                })
                 .catch((error) => {
-                    document.getElementById('id143').innerHTML = error;
+                    document.getElementById('id143').innerHTML = error; // Describes what to do with the resolve param when the work is unsuccessful
                 });
     </script>
         <script src="script.js" defer="true"></script>
