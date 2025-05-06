@@ -1392,14 +1392,37 @@ document.getElementById("id65").innerHTML = txt;
         function function39() {
             document.getElementById('id141').innerHTML = 'Loaded';
             let d = new Date();
-            setInterval(function40, 1000);
+            setInterval(function40, 1);
         }
         function function40() {
             let d = new Date();
             document.getElementById('id142').innerHTML =    d.getHours() + ":" +
                                                             d.getMinutes() + ":" +
-                                                            d.getSeconds();;
+                                                            d.getSeconds() + ":" +
+                                                            d.getMilliseconds();
         }
+    </script>
+
+<hr>
+<h2>JavaScript Promises</h2>
+<p id="id143"></p>
+
+    <script>
+        let myPromise = new Promise(function(resolve, reject) {
+            let randNum = Math.random();
+            if (randNum <= 0.5) {
+                resolve(`Success! The number is ${randNum}`);
+            } else {
+                reject(`Failure! The number is ${randNum}`);
+            }
+        });
+            myPromise
+                .then((message) => {
+                    document.getElementById('id143').innerHTML = message;
+            })
+                .catch((error) => {
+                    document.getElementById('id143').innerHTML = error;
+                });
     </script>
         <script src="script.js" defer="true"></script>
     </body>
