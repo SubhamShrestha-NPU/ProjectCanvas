@@ -1424,6 +1424,21 @@ document.getElementById("id65").innerHTML = txt;
                     document.getElementById('id143').innerHTML = error; // Describes what to do with the resolve param when the work is unsuccessful
                 });
     </script>
+
+<hr>
+<h2>JavaScript Async/Await</h2>
+<p id="id144"></p>
+    <script>
+        async function function41() {
+            let myPromise = new Promise(function(resolve, reject) {
+                setTimeout(function() {
+                    resolve(`I Love You to the ${Infinity}`) //There's no need of treating the Infinity, it's just fun
+                }, 3000)
+            });
+            document.getElementById('id144').innerHTML = await myPromise;
+        }
+        function41();
+    </script>
         <script src="script.js" defer="true"></script>
     </body>
 </html>
