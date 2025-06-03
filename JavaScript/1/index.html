@@ -1430,15 +1430,24 @@ document.getElementById("id65").innerHTML = txt;
 <p id="id144"></p>
     <script>
         async function function41() {
-            let myPromise = new Promise(function(resolve, reject) {
-                setTimeout(function() {
-                    resolve(`I Love You to the ${Infinity}`) //There's no need of treating the Infinity, it's just fun
-                }, 3000)
-            });
-            document.getElementById('id144').innerHTML = await myPromise;
+            let myPromise = new Promise(function(resolve, reject)) {
+                setTimeout(function()) {
+                    resolve(`I Love You to the ${Infinity}`); //There's no need of treating the Infinity as number, it's just fun
+                    reject(new Error("Something went wrong")); //This will never execute, it's just there to give you an idea of reject when using async
+                }
+            }
         }
         function41();
     </script>
+
+<hr>
+<hr>
+<h1>JS HTML DOM</h1>
+
+<h2>DOM Intro</h2>
+<p>The W3C <b>O</b>bejct <b>D</b>ocument <b>M</b>odel (<b>DOM</b>) is a platform
+    and language-neutral interface that allows programs and scripts to dynamically
+    access and update the content, structure and style of a document.</p>
         <script src="script.js" defer="true"></script>
     </body>
 </html>
