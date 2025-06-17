@@ -1427,19 +1427,23 @@ document.getElementById("id65").innerHTML = txt;
 
 <hr>
 <h2>JavaScript Async/Await</h2>
-<p id="id144"></p>
-    <script>
+<p id="id144"></p>    <script>
         async function function41() {
-            let myPromise = new Promise(function(resolve, reject)) {
-                setTimeout(function()) {
+            let myPromise = new Promise(function(resolve, reject) {
+                setTimeout(function() {
                     resolve(`I Love You to the ${Infinity}`); //There's no need of treating the Infinity as number, it's just fun
-                    reject(new Error("Something went wrong")); //This will never execute, it's just there to give you an idea of reject when using async
-                }
+                    // reject(new Error("Something went wrong")); //This will never execute, it's just there to give you an idea of reject when using async
+                }, 3000);
+            });
+            
+            try {
+                document.getElementById('id144').innerHTML = await myPromise;
+            } catch (error) {
+                document.getElementById('id144').innerHTML = `Error: ${error.message}`;
             }
         }
         function41();
     </script>
-
 <hr>
 <hr>
 <h1>JS HTML DOM</h1>
@@ -1448,6 +1452,19 @@ document.getElementById("id65").innerHTML = txt;
 <p>The W3C <b>O</b>bejct <b>D</b>ocument <b>M</b>odel (<b>DOM</b>) is a platform
     and language-neutral interface that allows programs and scripts to dynamically
     access and update the content, structure and style of a document.</p>
+
+<hr>
+<h2>DOM Methods</h2>
+<p id="id145"></p>
+<button onclick="function42()">Click here to learn more about HTML DOM</button>
+
+    <script>
+        function function42() {
+            document.write("<details><summary><h1>SO YOU PRESSED ME, Ummmm.... <br /> NOW WHO'll BRING ALL THE CONTENTS BACK? <br /> YOU'VE SPOILED MY YEARS OF HARDWORK 😭😭😭, now please click the triangle above, please, my life depends on it</h1></summary>"
+                + "SIMPLY PRESS THE REFRESH BUTTON STUUUPID!</details>"
+            )
+        }
+    </script>
         <script src="script.js" defer="true"></script>
     </body>
 </html>
