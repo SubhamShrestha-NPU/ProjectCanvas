@@ -1482,6 +1482,26 @@ document.getElementById("id65").innerHTML = txt;
             document.getElementById('id147').innerHTML = validity ? "Successfully submitted, " + x + "!" : "Please enter a valid name";
         }
     </script>
+
+<hr>
+<h2>DOM CSS</h2>
+    <p id="id148"><b>Try clicking the button below few times!</b></p>
+    <button onclick="function44()">Here</button>
+    <p><b>Color: <span id="id149"></span></b></p>
+    <script>
+        function function44() {
+            let r, g, b;
+            r = Math.floor(Math.random() * 256);
+            g = Math.floor(Math.random() * 256);
+            b = Math.floor(Math.random() * 256);
+            //document.getElementById('id148').style.fontSize = (parseInt(getComputedStyle(document.getElementById('id148')).fontSize) + 2) + 'px';
+            document.getElementById('id148').style.color = `rgb(${r}, ${g}, ${b})`;
+            document.getElementById('id149').innerHTML = `rgb(${r}, ${g}, ${b})`;
+            document.getElementById('id149').style.background = `rgb(${r}, ${g}, ${b})`;
+            document.getElementById('id149').style.color = `rgb(${255 - r}, ${255 - g}, ${255 - b})`;
+            document.getElementById('id149').style.padding = "3px";
+        }
+    </script>
         <script src="script.js" defer="true"></script>
     </body>
 </html>

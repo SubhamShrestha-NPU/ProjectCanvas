@@ -182,3 +182,13 @@ blockquote {
     display: inline-block;
     backdrop-filter: blur(50px);
 }
+button {
+    background: linear-gradient(45deg, #1a1a2e, #004d40, #1a1a2e);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
