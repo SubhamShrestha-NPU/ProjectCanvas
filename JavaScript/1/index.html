@@ -1502,6 +1502,30 @@ document.getElementById("id65").innerHTML = txt;
             document.getElementById('id149').style.padding = "3px";
         }
     </script>
+
+<hr>
+<h2>DOM Animations</h2>
+    <div id="id150">
+        <div id="id151"></div> <!-- Animated element -->
+    </div> <!-- Animations container -->
+    <button onclick="function45()">Click here!</button>
+    <script>
+    function function45() {
+        let pos = 0, id = null;
+        const id151 = document.getElementById('id151');
+        id = setInterval(function46, 1);
+        function function46() {
+            if (pos >= 200) {
+                clearInterval(id);
+            } else {
+                pos += 0.7;
+                id151.style.top = pos + 'px';
+                id151.style.left = pos + 'px';
+
+            }
+        }
+    }
+    </script>
         <script src="script.js" defer="true"></script>
     </body>
 </html>

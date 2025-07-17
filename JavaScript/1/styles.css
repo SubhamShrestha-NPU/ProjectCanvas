@@ -191,4 +191,20 @@ button {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    z-index: 1000; /* Ensures the button is above other elements */ 
+    top: 0;
+    left: 0;
 }
+
+#id150 {
+    position: relative;
+    background: #60900f;
+    max-width: 250px; /* Ensures that the width is at least 250px*/
+    aspect-ratio: 1 / 1; /* sets the height same as the width */
+} /* Animation container, refer DOM Animation section */
+#id151 {
+    position: relative;
+    background: #dcfd01;
+    max-width: 50px;
+    aspect-ratio: 1 / 1;
+} /* Animated content, refer to DOM Animation section */
