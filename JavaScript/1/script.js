@@ -46,4 +46,3 @@ Animal.prototype.Horns = horns; //adding a new property
 const tiger = new Animal("mammal","yellow","herbivores","have horns");
 const crocodile = new Animal("amphibians","green","carnivores", "have no horns");
 const myArray1 = Object.values(tiger);
-

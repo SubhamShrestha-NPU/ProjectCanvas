@@ -1526,6 +1526,14 @@ document.getElementById("id65").innerHTML = txt;
         }
     }
     </script>
+<hr>
+<h2>DOM Event Listener</h2>
+    <div id="id152">Mouse over me!</div>
+    <script>
+        document.getElementById("id152").addEventListener("mouseover", function() {
+            this.innerHTML = "Hi";
+        });
+    </script>
         <script src="script.js" defer="true"></script>
     </body>
 </html>
