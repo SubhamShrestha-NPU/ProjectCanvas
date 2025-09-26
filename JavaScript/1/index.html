@@ -1555,6 +1555,29 @@ document.getElementById("id65").innerHTML = txt;
             })
         }
     </script>
-        <script src="script.js" defer="true"></script>
+
+<hr>
+<h2>BOM Screen</h2>
+    <p>BOM Screen allows to fetch details about your screen.</p>
+    <dl id="id154">
+        <dt>Screen width: </dt>
+        <dd></dd>
+        <dt>Screen height: </dt>
+        <dd></dd>
+        <dt>Color depth: </dt>
+        <dd></dd>
+        <dt>Pixel Depth: </dt>
+        <dd></dd>
+    </dl>
+    <script>
+        local2: {
+            const ddEle = document.querySelectorAll("#id154 dd");
+            ddEle[0].innerHTML = screen.width;
+            ddEle[1].innerHTML = screen.height;
+            ddEle[2].innerHTML = screen.colorDepth;
+            ddEle[3].innerHTML = screen.pixelDepth;
+        }
+    </script>
+<script src="script.js" defer="true"></script>
     </body>
 </html>
