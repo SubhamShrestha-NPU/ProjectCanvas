@@ -7,7 +7,7 @@
         <link rel="icon" href="C:/Users/subha/OneDrive/Desktop/Code/CSS Magic/images/proIMGbg.png">
         <link rel="stylesheet" href="styles.css">
     </head>
-
+<body>
     <span>
         <div id="testEnvironment">
         </div>
@@ -1533,6 +1533,27 @@ document.getElementById("id65").innerHTML = txt;
         document.getElementById("id152").addEventListener("mouseover", function() {
             this.innerHTML = "Hi";
         });
+    </script>
+<hr>
+<h1>BOM (Browser Object Window)</h1>
+
+<h2>BOM Window</h2>
+    <p>BOM window refers to the congtainer in which the webpage is contained (excluding the title bar and borders of the actual browser)</p>
+    <p id="id153"></p>
+
+    <script>
+        local1: {
+            let id153 = document.getElementById("id153");
+            // let a = 0, b = 0;
+            let a = window.innerHeight;
+            let b = window.innerWidth;
+            id153.innerHTML = `The webpage window is ${a}px and ${b}px in size`;
+            window.addEventListener("resize", ()=> {
+                a = window.innerHeight;
+                b = window.innerWidth;
+                id153.innerHTML = `The webpage window is ${a}px and ${b}px in size`;
+            })
+        }
     </script>
         <script src="script.js" defer="true"></script>
     </body>
