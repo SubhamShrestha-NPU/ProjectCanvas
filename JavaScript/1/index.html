@@ -1535,9 +1535,9 @@ document.getElementById("id65").innerHTML = txt;
         });
     </script>
 <hr>
-<h1>BOM (Browser Object Window)</h1>
+<h1>BOM (Browser Object Model)</h1>
 
-<h2>BOM Window</h2>
+<h2>Window</h2>
     <p>BOM window refers to the congtainer in which the webpage is contained (excluding the title bar and borders of the actual browser)</p>
     <p id="id153"></p>
 
@@ -1557,15 +1557,18 @@ document.getElementById("id65").innerHTML = txt;
     </script>
 
 <hr>
-<h2>BOM Screen</h2>
+<h2>Screen</h2>
     <p>BOM Screen allows to fetch details about your screen.</p>
     <dl id="id154">
         <dt>Screen width: </dt>
         <dd></dd>
+
         <dt>Screen height: </dt>
         <dd></dd>
+
         <dt>Color depth: </dt>
         <dd></dd>
+
         <dt>Pixel Depth: </dt>
         <dd></dd>
     </dl>
@@ -1576,6 +1579,46 @@ document.getElementById("id65").innerHTML = txt;
             ddEle[1].innerHTML = screen.height;
             ddEle[2].innerHTML = screen.colorDepth;
             ddEle[3].innerHTML = screen.pixelDepth;
+        }
+    </script>
+
+<hr>
+<h2>Location (Not the Event Listener one!)</h2>
+    <p>It's used to get the current page address (URL) and redirecting to another pages (like you get annoyingly redirected to an advertisement site when you click the atom sized "X" button p the ad banner)</p>
+
+    <dl id="id155">
+        <dt>URL (current page):</dt>
+        <dd></dd>
+
+        <dt>Domain Name of Web Host (current page):</dt>
+        <dd></dd>
+
+        <dt>Port Number (current page) :</dt>
+        <dd></dd>
+
+        <dt>Path and File Name (current page):</dt>
+        <dd></dd>
+
+        <dt>Web Protocol (current page):</dt>
+        <dd></dd>
+
+        <dt>Redirect (NASA's Homepage):</dt>
+        <dd>Click Here!</dd>
+    </dl>
+    <script>
+        local3: {
+            const ddEle = document.querySelectorAll("#id155 dd");
+            ddEle[0].innerHTML = location.href;
+            ddEle[1].innerHTML = location.hostname;
+            ddEle[2].innerHTML = location.port;
+            ddEle[3].innerHTML = location.pathname;
+            ddEle[4].innerHTML = location.protocol;
+
+            ddEle[5].addEventListener("click",
+                function (){
+                    location.assign("https://www.nasa.gov/");
+                }
+            );
         }
     </script>
 <script src="script.js" defer="true"></script>
