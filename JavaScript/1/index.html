@@ -1621,6 +1621,57 @@ document.getElementById("id65").innerHTML = txt;
             );
         }
     </script>
+
+<hr>
+<h2>Navigator</h2>
+    <dl id="id156">
+        <dt>Cookies Enabled: </dt>
+        <dd></dd>
+
+        <dt>Browser Langauge: </dt>
+        <dd></dd>
+
+        <dt>Is Online: </dt>
+        <dd></dd>
+
+        <dt>Application Name: </dt>
+        <dd></dd>
+
+        <dt>Application Code Name: </dt>
+        <dd></dd>
+
+
+        <dt>Browser Engine Name: </dt>
+        <dd></dd>
+
+        <dt>Browser Version: </dt>
+        <dd></dd>
+
+        <dt>Browser Agent: </dt>
+        <dd></dd>
+
+        <dt>Operating System: </dt>
+        <dd></dd>
+        
+        <dt>Java Enabled: </dt>
+        <dd></dd>
+    </dl>
+    <script>
+        local4: {
+            const ddEle = document.querySelectorAll("#id156 dd");
+
+            ddEle[0].innerHTML = navigator.cookieEnabled;
+            ddEle[1].innerHTML = navigator.language;
+            ddEle[2].innerHTML = navigator.onLine;
+            ddEle[3].innerHTML = navigator.appName + " (this is deprecated)";
+            ddEle[4].innerHTML = navigator.appCodeName + " (this is deprecated);";
+            ddEle[5].innerHTML = navigator.product + " (this is deprecated)";
+            ddEle[6].innerHTML = navigator.appVersion + " (this is deprecated)";
+            ddEle[7].innerHTML = navigator.userAgent + " (this is deprecated)";
+            ddEle[8].innerHTML = navigator.platform + " (this is deprecated)";
+            ddEle[9].innerHTML= navigator.javaEnabled + " (this is deprecated)";
+        }
+    </script>
 <script src="script.js" defer="true"></script>
     </body>
 </html>
