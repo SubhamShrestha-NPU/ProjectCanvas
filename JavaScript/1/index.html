@@ -1672,6 +1672,33 @@ document.getElementById("id65").innerHTML = txt;
             ddEle[9].innerHTML= navigator.javaEnabled + " (this is deprecated)";
         }
     </script>
+
+<hr>
+<h2>Popup Boxes</h2>
+    <button id="id157">Click to Get an Alert Box</button> <br /> <br />
+    <button id="id158">Click to Get Confirm Box</button> <br /> <br />
+    <button id="id159">Click to Get Prompt Box</button> <br /> <br />
+    <div id="id160"></div>
+    <script>
+        local5: {
+            document.getElementById("id157").addEventListener("click", () => {
+                alert("Alert!\nAlert!");
+            });
+            document.getElementById("id158").addEventListener("click", () => {
+                confirm("Confirm!\nConfirm!");
+            });
+            document.getElementById("id159").addEventListener("click", () => {
+                const p = prompt("Enter Your Name", "Harry Potter");
+
+                if(p === null) {
+                    document.getElementById("id160").innerHTML = "No User Input";
+                } else {
+                    document.getElementById("id160").innerHTML = `Hello, ${p}!`;
+                }
+            });
+        }
+    </script>
+
 <script src="script.js" defer="true"></script>
     </body>
 </html>
