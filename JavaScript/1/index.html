@@ -1699,6 +1699,27 @@ document.getElementById("id65").innerHTML = txt;
         }
     </script>
 
+<hr>
+<h3>JS Timing</h3>
+    <div id="id161"></div>
+    <div id="id162"></div>
+
+    <script>
+        local6: {
+            let id161 = document.getElementById("id161");
+            let id162 = document.getElementById("id162");
+            window.addEventListener("load", () => {
+                let i = 0; //initializes i
+                setInterval(() => {
+                    id161.innerHTML = `${i}s have elapsed since the webpage has completely loaded!`;
+                    i++; //increments the value
+                }, 1000);
+                setTimeout(() => {
+                    id162.innerHTML = "It's been more than a minute the webpage has completely loaded.";
+                }, 60001); //executes just a millisecond past 60s 
+            });
+        }
+    </script>
 <script src="script.js" defer="true"></script>
     </body>
 </html>
