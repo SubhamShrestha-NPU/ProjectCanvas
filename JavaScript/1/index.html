@@ -1720,6 +1720,76 @@ document.getElementById("id65").innerHTML = txt;
             });
         }
     </script>
+
+<hr>
+<h2>Cookies</h2>
+    <form action="">
+        <label for="cname">Cookie Name:</label>
+        <input type="text" name="cname" id="id163"> <br />
+
+        <label for="cvalue">Cookie Value:</label>
+        <input type="text" name="cvalue" id="id164"> <br />
+
+        <label for="exdays">Expires in (days):</label>
+        <input type="text" name="exdays" id="id165"> <br />
+
+        <input type="button" value="Submit to Set" id="id166">
+    </form>
+
+    <form action="">
+        <label for="cNameGet">Enter Cookie Name to search:</label>
+        <input type="text" name="cNameGet" id="id167"> <br />
+
+        <input type="button" value="Submit to Get" id="id168">
+    </form>
+
+    <script>
+        local7: {
+            function getFormValues() {
+                return {
+                    cname: document.getElementById("id163").value,
+                    cvalue: document.getElementById("id164").value,
+                    exdays: document.getElementById("id165").value
+                } // returns an array (unnamed)
+            }
+
+            function setCookie(cName, cValue, exDays) {
+                const d = new Date();
+                d.setTime(d.getTime() + (exDays * 24 * 60 * 60 * 1000)); //sets date to exDays after current time
+                let expires = "expires=" + d.toUTCString(); //stringify the expiration value
+                document.cookie = cName + "=" + cValue + ";" + expires + "; path=/";
+            }
+
+            function getCookies(cName) {
+                let name = cName + "="; //accepts the cookie name
+                let decodedCookie = decodeURIComponent(document.cookie); //decodes special characters in the cookie string
+                let cookieArr = decodedCookie.split(";"); //creates an array, by breaking into a new element wherever it encounters ';'
+                let result = ""; // Will stores the cValue of cName
+
+                cookieArr.forEach((cookie) => {
+                    let c = cookie;  //stores string of each cookie
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);  //removes leading spaces
+                    }
+                    if(c.indexOf(name) == 0) {
+                        result = c.substring(name.length, c.length); //extracts characters from the end of cookie name to the end of cookie value (so that only the cookie value is returned)
+                    }
+                });
+                return result;
+            }
+
+            document.getElementById("id166").addEventListener("click", () => {
+                const cookieArr = getFormValues(); // stores the array
+                setCookie(cookieArr.cname, cookieArr.cvalue, cookieArr.exdays)
+            });
+
+            document.getElementById("id168").addEventListener("click", () => {
+                let cName = document.getElementById("id167").value;
+                let cValue = getCookies(cName); //stores the returned value
+                console.log(cValue);
+            })
+        }
+    </script>
 <script src="script.js" defer="true"></script>
     </body>
 </html>
