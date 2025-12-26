@@ -12,7 +12,7 @@
         <div id="testEnvironment">
         </div>
         <script src="testEnvironment.js"></script>
-        <p id="id1"></p> <getElementById() METHOD IS USED-->
+        <p id="id1"></p> <!-- getElementById() METHOD IS USED -->
         <p>2 + 3 = <span id="id2"></span></p>
         <p>NAME : <span id="id3"></span></p>
         <p>ARRAY : <span id="id4"></span></p>
@@ -1788,6 +1788,23 @@ document.getElementById("id65").innerHTML = txt;
                 let cValue = getCookies(cName); //stores the returned value
                 console.log(cValue);
             })
+        }
+    </script>
+
+<hr><hr>
+<h1>Web APIs</h1>
+<h2>Fetch APIs</h2>
+<p id="id169"></p>
+    <script>
+        local8: {
+            async function function47(file) {
+                const myObject = await fetch(file);
+                const text = await myObject.text();
+                return text;
+            }
+            function47("../../README.md").then(text => {
+                document.getElementById("id169").innerHTML = text;
+            });
         }
     </script>
 <script src="script.js" defer="true"></script>
