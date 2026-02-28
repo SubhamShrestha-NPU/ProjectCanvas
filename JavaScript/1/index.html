@@ -1574,6 +1574,53 @@ document.getElementById("id65").innerHTML = txt;
     </script>
 
 <hr>
+<h2>Keyboard Events</h2>
+    <div id="id176" class="box-rounded"></div> <br />
+    <table class="comparisonTable">
+            <tr>
+                <th>Key Combinations</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td>Shift + R</td>
+                <td> Red</td>
+            </tr>
+            <tr>
+                <td>Shift + G</td>
+                <td>Green</td>
+            </tr>
+            <tr>
+                <td>Shift + B</td>
+                <td>Blue</td>
+            </tr>
+    </table>
+    <script>
+        local11: {
+            const id176 = document.getElementById("id176"); // removed .innerHTML
+
+            document.addEventListener("keydown", function(e) {
+                if (e.shiftKey) { // check if Shift is held
+                    function52(e.key);
+                }
+            });
+
+            function function52(k) {
+                switch (k) {
+                    case "R": 
+                        id176.style.background = "red";
+                        break;
+                    case "G":
+                        id176.style.background = "green";
+                        break;
+                    case "B":
+                        id176.style.background = "blue";
+                        break;
+                }
+            }
+        }
+    </script>
+
+<hr>
 <h1>BOM (Browser Object Model)</h1>
 
 <h2>Window</h2>
