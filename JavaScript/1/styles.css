@@ -196,12 +196,16 @@ button {
     left: 0;
 }
 
-#id150 {
+.box, .box-rounded {
     position: relative;
     background: #60900f;
     max-width: 250px; /* Ensures that the width is at least 250px*/
     aspect-ratio: 1 / 1; /* sets the height same as the width */
 } /* Animation container, refer DOM Animation section */
+.box-rounded {
+    border: 0 solid black;
+    border-radius: 20px;
+}
 #id151 {
     position: relative;
     background: #dcfd01;
