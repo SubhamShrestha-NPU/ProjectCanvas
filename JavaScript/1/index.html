@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>JavaScript Demo 1</title>
         <link rel="icon" href="C:/Users/subha/OneDrive/Desktop/Code/CSS Magic/images/proIMGbg.png">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <link rel="stylesheet" href="styles.css">
     </head>
 <body>
@@ -574,7 +576,7 @@ document.getElementById("id65").innerHTML = txt;
 <h2>JavaScript Comparisons and Logical Operators</h2>
     <button onclick="function18()">Toggle Text</button> <br/>
     <p id="id75" style="display: none;">Hello, World!</p>
-    <input id='id76' type="text" onclick="function19()" value="Enter Your Age in Years"/>
+    <input id="id76" type="text" onclick="function19()" value="Enter Your Age in Years"/>
     <button onclick="function20()">SUBMIT</button>
     <p id="id77"></p>
     <script>
@@ -870,9 +872,9 @@ document.getElementById("id65").innerHTML = txt;
         <th>1010</th>
     </tr>
     <tr> <!-- 4 -->
-        <th>5 << 1</th>
+        <th>5 &lt;&lt; 1</th>
         <th>10</th>
-        <th>0101 <<  1</th>
+        <th>0101 &lt;&lt;  1</th>
         <th>1010</th>
     </tr>
     <tr> <!-- 5 -->
@@ -882,15 +884,15 @@ document.getElementById("id65").innerHTML = txt;
         <th>0100</th>
     </tr>
     <tr> <!-- 6 -->
-        <th>5 >> 1</th>
+        <th>5 &gt;&gt; 1</th>
         <th>2</th>
-        <th>0101 >> 1</th>
+        <th>0101 &gt;&gt; 1</th>
         <th>0010</th>
     </tr>
     <tr> <!-- 7 -->
-        <th>5 >>> 1</th>
+        <th>5 &gt;&gt;&gt; 1</th>
         <th>2</th>
-        <th>0101 >>> 1</th>
+        <th>0101 &gt;&gt;&gt; 1</th>
         <th>0010</th>
     </tr>
 </table>
@@ -1805,6 +1807,39 @@ document.getElementById("id65").innerHTML = txt;
             function47("../../README.md").then(text => {
                 document.getElementById("id169").innerHTML = text;
             });
+        }
+    </script>
+
+<hr>
+<h2>Geolocation API</h2>
+    <p id="id170"></p>
+    <button id="id171">Click To Share Your Geolocation </button>
+    <div id="id172"></div>
+    
+    <script>
+        local9: {
+            const id170 = document.getElementById("id170");
+            document.getElementById("id171").addEventListener("click", function48);
+
+            function function48() {
+                if(navigator.geolocation) {
+                    return navigator.geolocation.getCurrentPosition(function49, (error) => {
+                        id170.innerHTML = "Error: " + error.message;
+                    });
+                } else {
+                    id170.innerHTML = "Geolocation Not Supported By This Device"
+                }
+            }
+
+            function function49(pos) { //will receive the pos
+                id170.innerHTML = "Latitude:  " + pos.coords.latitude + "<br />Longitude:  " + pos.coords.longitude;
+                function50(pos); //sending the pos for display
+            }
+
+            function function50(pos) { //will display the pos in map
+                let latlong = pos.coords.latitude + "," + pos.coords.longitude;
+                
+            }
         }
     </script>
 <script src="script.js" defer="true"></script>
