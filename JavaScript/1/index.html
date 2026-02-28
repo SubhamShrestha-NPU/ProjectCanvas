@@ -1507,7 +1507,7 @@ document.getElementById("id65").innerHTML = txt;
 
 <hr>
 <h2>DOM Animations</h2>
-    <div id="id150">
+    <div id="id150" class="box">
         <div id="id151"></div> <!-- Animated element -->
     </div> <!-- Animations container -->
     <button onclick="function45()">Click here!</button>
@@ -1536,6 +1536,43 @@ document.getElementById("id65").innerHTML = txt;
             this.innerHTML = "Hi";
         });
     </script>
+
+<hr>
+<h2>Mouse Events</h2>
+    <div id="id173" class="box-rounded" style="display: flex; justify-content: center; align-items: center; background: #000;">Mouse Over</div>
+    <br />
+    <label for="mouseActions">
+        <select name="mouseActions" id="id174">
+            <option value="mouseover">Mouseover</option>
+            <option value="dblclick">Double Click</option>
+            <option value="contextmenu">Right Click</option>
+        </select>
+    </label> <br /><br />
+    <button type="submit" id="id175">Click</button>
+    <script>
+        local10: {
+            const id173 = document.getElementById("id173");
+            const id174 = document.getElementById("id174");
+            const id175 = document.getElementById("id175");
+            let currentEvent = null; 
+
+            id175.addEventListener("click", function() {
+                if(currentEvent != null) {
+                    id173.removeEventListener(currentEvent, function51);
+                } //removes any previous event listener
+                currentEvent = id174.value;
+                id173.style.background = "black"; //changes the bg to black, so that user can test multiple events without refreshing the page
+                id173.addEventListener(currentEvent, function51);
+                console.log(currentEvent);
+            });
+
+            function function51(e) {
+                e.preventDefault();
+                id173.style.background = id173.style.background === "red" ? "black" : "red";
+            }
+        }
+    </script>
+
 <hr>
 <h1>BOM (Browser Object Model)</h1>
 
