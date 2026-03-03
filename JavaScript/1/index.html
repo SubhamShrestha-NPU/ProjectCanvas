@@ -1936,6 +1936,50 @@ document.getElementById("id65").innerHTML = txt;
             }
         }
     </script>
+
+<hr>
+<h2>Web History API</h2>
+    <button id="id177">Go to the previous webpage</button>
+    <button id="id178">Go to the next webpage</button> <br /> <br />
+
+    <label for="moveBack">Enter the number of page you want to go back:</label>
+    <input type="text" name="moveBack" id="id179">
+    <br /> <br />
+    <label for="moveForward">Enter the number of pages you want to go forward:</label>
+    <input type="text" name="moveForward" id="id180">
+    <p>Press enter to confirm!</p>
+    <script>
+        local12: {
+            const id179 = document.getElementById("id179");
+            const id180 = document.getElementById("id180");
+
+            function function53() {
+                window.history.back();
+            }
+            function function54() {
+                window.history.forward();
+            }
+            function function55() {
+                window.history.go(-1 * (id179.value));
+            } //for moving back
+            function function56() {
+                window.history.go(id180.value);
+            } //for moving forward
+
+            document.getElementById("id177").addEventListener("click", function53);
+            document.getElementById("id178").addEventListener("click", function54);
+            id179.addEventListener("keydown", (event) => {
+                if(event.key === "Enter") {
+                    function55();
+                }
+            });
+            id180.addEventListener("keydown", (event) => {
+                if(event.key === "Enter") {
+                    function56();
+                }
+            })
+        }
+    </script>
 <script src="script.js" defer="true"></script>
     </body>
 </html>
