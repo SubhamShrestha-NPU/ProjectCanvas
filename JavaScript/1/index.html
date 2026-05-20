@@ -1028,7 +1028,7 @@ document.getElementById("id65").innerHTML = txt;
         
         //Example usage:
         let Father = new Person('Raju', 'Shrestha', 40, 'Male');
-        let Mother = new Person('Raju', 'Shrestha', 40, 'Female');
+        let Mother = new Person('Anju', 'Shrestha', 40, 'Female');
         let Child = new Person('Subham', 'Shrestha', 14, 'Male');
         document.getElementById('id111').innerHTML = `Father <br/> First Name : ${Father.firstName} <br/> Last Name : ${Father.lName} <br/> Age : ${Father.age}  <br/> Gender : ${Father.gender} <br/> Country : ${Father.country} <br/><br/>` +
                                                      `Mother <br/> First Name : ${Mother.firstName} <br/> Last Name : ${Mother.lName} <br/> Age : ${Mother.age} <br/> Gender : ${Mother.gender} <br/> Country : ${Mother.country} <br/><br/>` +
@@ -1446,6 +1446,67 @@ document.getElementById("id65").innerHTML = txt;
         }
         function41();
     </script>
+
+<hr>
+<h2>Async fetch</h2>
+    <label for="employeeName">Check data of:</label>
+    <select name="employeeName" id="id181" title="Select Employee Name"></select>
+    <div id="id182"></div>
+    <script>
+        async function function57() {
+            try {
+                //Fetch the JSON file
+                const r = await fetch('5MB.json');
+                const response = await r.json();
+
+                return response;
+            } catch(e) {
+                console.error("Error fetching data:", e);
+                document.getElementById('id182').innerHTML = "Error loading data!";
+
+                return null;
+            }
+        } //Fetches JSON file and returns it in JSON format
+
+        async function function58(name) {
+            const r = await function57();
+            const employee = r.find(emp => emp.name === name);
+            
+            if (!employee) {
+                document.getElementById('id182').innerHTML = "<p>Employee not found!</p>";
+                console.error("Employee not found: " + name);
+                return;
+            }
+
+            document.getElementById('id182').innerHTML = `
+                <b>Name:</b> ${employee.name}<br/>
+                <b>Language:</b> ${employee.language}<br/>
+                <b>ID:</b> ${employee.id}<br/>
+                <b>Bio:</b> ${employee.bio}<br/>
+                <b>Version:</b> ${employee.version}<br/>`;
+        } //Displays information of selected employee
+
+        async function function59() {
+            const r = await function57();
+            const selEle = document.getElementById("id181");
+            let name;
+
+            r.forEach( (employee) => {
+                name = employee.name;
+                selEle.add(new Option(name, name));
+
+            })
+        } //Logs all employee names as options under <select>
+        function59();
+        
+        //Event listener for select change
+        document.getElementById("id181").addEventListener("change", function() {
+            if(this.value) {
+                function58(this.value);
+            }
+        });
+    </script>
+
 <hr>
 <hr>
 <h1>JS HTML DOM</h1>
