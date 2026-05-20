@@ -576,7 +576,7 @@ document.getElementById("id65").innerHTML = txt;
 <h2>JavaScript Comparisons and Logical Operators</h2>
     <button onclick="function18()">Toggle Text</button> <br/>
     <p id="id75" style="display: none;">Hello, World!</p>
-    <input id="id76" type="text" onclick="function19()" value="Enter Your Age in Years"/>
+    <input title="age" id="id76" type="text" onclick="function19()" value="Enter Your Age in Years"/>
     <button onclick="function20()">SUBMIT</button>
     <p id="id77"></p>
     <script>
@@ -620,7 +620,7 @@ document.getElementById("id65").innerHTML = txt;
 
 <hr>
 <h2>JavaScript Switch Statement</h2>
-    <input type="text" id="id79" value="Enter the day[full, in lower case]" onclick="function21()"><br/>
+    <input type="text" id="id79" title="day" value="Enter the day[full, in lower case]" onclick="function21()"><br/>
     <button type="submit" onclick="function22()">Submit</button>
     <p id="id80"></p>
     <script>
@@ -652,8 +652,8 @@ document.getElementById("id65").innerHTML = txt;
 
 <hr>
 <h2>JS Loop For</h2>
-    <label>No. of items :&ThickSpace;&ThickSpace;</label><input type="text" id="id81"><br/>
-    <label>Item :&ThickSpace;&ThickSpace;</label><input type="text" id="id82"><br/>
+    <label>No. of items :&ThickSpace;&ThickSpace;</label><input title="Number of Items" type="text" id="id81"><br/>
+    <label>Item :&ThickSpace;&ThickSpace;</label><input title="Items" type="text" id="id82"><br/>
     <button id="id83" onclick="function23()">ORDER &nbsp; ITEMS</button>
     <p id="id84"></p>
     <script>
@@ -683,7 +683,7 @@ document.getElementById("id65").innerHTML = txt;
 <hr>
 <h2>JavaScript For Of</h2>
     <label for="string">Enter the text that you want to see formatted vertically: </label>
-    <input type="text" name="string" id="id86" oninput="function24()">
+    <input type="text" name="string" id="id86" title="Enter the text that you want to see formatted vertically" oninput="function24()">
     <p id="id87"></p>
     <script>
         function function24() {
@@ -926,7 +926,7 @@ document.getElementById("id65").innerHTML = txt;
 <hr>
 <h2>JavaScript Errors</h2>
 <p>Please enter a number between 5 and 10 (included):</p>
-<input id="id101" />
+<input id="id101" title="Enter the number"/>
 <button id="id102" onclick="function27()">Submit</button>
 <p id="id103"></p>
 <script>
@@ -1160,7 +1160,7 @@ document.getElementById("id65").innerHTML = txt;
 <hr><hr>
 <h1>JS Functions</h1>
 <h2>JavaScript Functions</h2>
-    <input type="text" id="id129" onchange="function30()" />
+    <input type="text" id="id129" onchange="function30()" title="Enter anything" />
     <p id="id130"><i>[press tab or enter to submit]</i></p>
     <script>
         let function30 = function () {
@@ -1173,7 +1173,7 @@ document.getElementById("id65").innerHTML = txt;
 
 <hr>
 <h2>Functions Parameters</h2>
-    <input type="text" id="id131" onchange="function31()"/>
+    <input type="text" id="id131" onchange="function31()" title="Enter the list of numbers"/>
     <p id="id132"><i>Press Tab or Enter after entering the list of numbers separated by commas</i></p>
     <script>
         const id131 = document.getElementById('id131');
@@ -1605,7 +1605,7 @@ document.getElementById("id65").innerHTML = txt;
     <div id="id173" class="box-rounded" style="display: flex; justify-content: center; align-items: center; background: #000;">Mouse Over</div>
     <br />
     <label for="mouseActions">
-        <select name="mouseActions" id="id174">
+        <select name="mouseActions" id="id174" title="Select event/trigger action">
             <option value="mouseover">Mouseover</option>
             <option value="dblclick">Double Click</option>
             <option value="contextmenu">Right Click</option>
@@ -1882,20 +1882,20 @@ document.getElementById("id65").innerHTML = txt;
 <h2>Cookies</h2>
     <form action="">
         <label for="cname">Cookie Name:</label>
-        <input type="text" name="cname" id="id163"> <br />
+        <input type="text" name="cname" id="id163" title="Enter cookie name"> <br />
 
         <label for="cvalue">Cookie Value:</label>
-        <input type="text" name="cvalue" id="id164"> <br />
+        <input type="text" name="cvalue" id="id164" title="enter cookie name"> <br />
 
         <label for="exdays">Expires in (days):</label>
-        <input type="text" name="exdays" id="id165"> <br />
+        <input type="text" name="exdays" id="id165" title="enter expiry date"> <br />
 
         <input type="button" value="Submit to Set" id="id166">
     </form>
 
     <form action="">
         <label for="cNameGet">Enter Cookie Name to search:</label>
-        <input type="text" name="cNameGet" id="id167"> <br />
+        <input type="text" name="cNameGet" id="id167" title="Enter cookie name to be searched"> <br />
 
         <input type="button" value="Submit to Get" id="id168">
     </form>
@@ -2004,10 +2004,10 @@ document.getElementById("id65").innerHTML = txt;
     <button id="id178">Go to the next webpage</button> <br /> <br />
 
     <label for="moveBack">Enter the number of page you want to go back:</label>
-    <input type="text" name="moveBack" id="id179">
+    <input type="text" name="moveBack" id="id179" title="Number of pages backward">
     <br /> <br />
     <label for="moveForward">Enter the number of pages you want to go forward:</label>
-    <input type="text" name="moveForward" id="id180">
+    <input type="text" name="moveForward" id="id180" title="Number of pages forward">
     <p>Press enter to confirm!</p>
     <script>
         local12: {
