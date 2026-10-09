@@ -3,15 +3,17 @@ import header from "./components/header.js";
 import footer from "./components/footer.js";
 
 const root = document.getElementById('root');
-const data = [
-    {
-        main_img: "https://picsum.photos/500?random=1",
-        profile_img_style: getRandomStyle(),
-        profile_img_seed: getRandomString(8, 3),
-        name: await getRandomName(),
-        date: getRandomPastDate() //fetches random date
-    }
-]
+// const data = [
+//     {
+//         main_img: "https://picsum.photos/500?random=1",
+//         profile_img_style: getRandomStyle(),
+//         profile_img_seed: getRandomString(8, 3),
+//         name: await getRandomName(),
+//         date: getRandomPastDate() //fetches random date
+//     }
+// ]
+
+const data = await addArray(10);
 
 root.insertAdjacentHTML("beforebegin", header());
 // root.innerHTML = card(main_img, pfp_style, pfp_seed, name, date);
@@ -68,4 +70,20 @@ function getRandomStyle() {
     let index = Math.floor(Math.random() * styles.length); //selects a random index number
 
     return styles[index]; //returns the random style
+}
+
+async function addArray(len) { //creates arrays of desired length containing card data
+    const arr = [];
+    let i;
+    for (i = 0; i < len; i++) {
+        arr[i] = {
+            main_img: `https://picsum.photos/500?random=${i}`,
+            profile_img_style: getRandomStyle(),
+            profile_img_seed: getRandomString(8, 3),
+            name: await getRandomName(),
+            date: getRandomPastDate() //fetches random date
+        }
+    }
+
+    return arr;
 }
