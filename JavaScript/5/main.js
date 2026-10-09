@@ -19,10 +19,6 @@ root.insertAdjacentHTML("beforebegin", header());
 // root.innerHTML = card(main_img, pfp_style, pfp_seed, name, date);
 root.insertAdjacentHTML("afterend", footer());
 
-data.forEach(el => {
-    root.innerHTML += card(el.main_img, el.profile_img_style, el.profile_img_seed, el.name, el.date);
-});
-
 
 function getRandomPastDate() {
   const start = new Date(2020, 0, 1).getTime(); // Jan 1, 2020
@@ -72,18 +68,26 @@ function getRandomStyle() {
     return styles[index]; //returns the random style
 }
 
-async function addArray(len) { //creates arrays of desired length containing card data
-    const arr = [];
-    let i;
-    for (i = 0; i < len; i++) {
-        arr[i] = {
-            main_img: `https://picsum.photos/500?random=${i}`,
+async function addArray(len) {
+    for (let i = 0; i < len; i++) {
+        const el = {
+            main_img: `https://picsum.photos/500?random=${i + 1}`,
             profile_img_style: getRandomStyle(),
             profile_img_seed: getRandomString(8, 3),
             name: await getRandomName(),
-            date: getRandomPastDate() //fetches random date
-        }
-    }
+            date: getRandomPastDate()
+        };
 
-    return arr;
+        // Render each card as soon as its data is ready
+        root.insertAdjacentHTML(
+            "beforeend",
+            card(
+                el.main_img,
+                el.profile_img_style,
+                el.profile_img_seed,
+                el.name,
+                el.date
+            )
+        );
+    }
 }
