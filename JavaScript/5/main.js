@@ -6,8 +6,8 @@ const root = document.getElementById('root');
 const data = [
     {
         main_img: "https://picsum.photos/500?random=1",
-        profile_img_style: "patchwork",
-        profile_img_seed: "1dej",
+        profile_img_style: getRandomStyle(),
+        profile_img_seed: getRandomString(8, 3),
         name: await getRandomName(),
         date: getRandomPastDate() //fetches random date
     }
@@ -47,4 +47,25 @@ async function getRandomName() {
     } catch (e) {
         return "Jon Doe";
     }
+}
+
+
+function getRandomString(max, min) {
+    const len = Math.floor(Math.random() * (max - min + 1)) + min;
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"; //stores the all permitted characters used to generate the string
+    let str = "";
+
+    for (let i = 0; i < len; i++) {
+        str += chars[Math.floor(Math.random() * chars.length)]; //assigns a random character from chars
+    }
+
+    return str;
+}
+
+function getRandomStyle() {
+    const styles = ['blobs', 'glyphs', 'identicon', 'initial-face', 'loops', 'patchwork', 'rings', 'slices', 'shapes', 'squircles', 'stack', 'waves', 'bottts-neutral', 'avataaars', 'adventurer', 'bottts', 'clay', 'critters']; //stores all the selected styles
+
+    let index = Math.floor(Math.random() * styles.length); //selects a random index number
+
+    return styles[index]; //returns the random style
 }
