@@ -1,0 +1,139 @@
+:root {
+    --zinc-900: #18181b;
+    --zinc-700: #3f3f46;
+    --zinc-600: #52525b;
+    --zinc-200: #e4e4e7;
+}
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: 0px;
+    background: #00000000;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+header * {
+    background: var(--zinc-900);
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+nav a {
+    display: inline-block;
+    padding-inline: 3px;
+    padding-block: 1px;
+    border-radius: 16px;
+    transition: transform 150ms ease;
+    padding: 10px;
+}
+
+nav a:hover {
+    transform: scale(1.05) translate(0px, -1px);
+    background: var(--zinc-700);
+}
+
+
+#card {
+    background: var(--zinc-200);
+    border-radius: 25px;
+    padding-bottom: 20px;
+    margin: 10px;
+    box-shadow: 8px 10px 18px #00000033;
+    overflow: hidden;
+}
+
+#card > img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#card_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+#profile_pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+#username{
+    font-size: medium;
+}
+
+#date {
+    font-size: x-small;
+    color: var(--zinc-600);
+    display: flex;
+}
+
+#actions {
+    align-items: center;
+}
+
+#actions button {
+    font-size: 1.8em;
+    margin-inline: 6px;
+    margin-block: 5px;
+}
+
+#like, #comments, #bookmark {
+    transition: transform 0.2s ease,
+        color 0.2s ease;
+}
+
+#like:hover {
+    color: #9B5278;
+    transform: 
+        translate(0px, -5px)
+        scale(1.02)
+        rotate(20deg);
+}
+
+#comments:hover {
+    color: #5084C1;
+}
+
+#bookmark:hover {
+    color: #314D1C;
+}
+
+footer {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 4px;
+    font-size: small;
+}
+
+footer h1 {
+    font-weight: bold;
+}
+
+footer > p {
+    font-size: xx-small;
+    color: var(--zinc-600);
+}
