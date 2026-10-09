@@ -1,18 +1,18 @@
-const card = () => {
+const card = (main_img, pfp_style, pfp_seed, name, date) => {
     return `
         <!-- card -->
         <div id="card">
             <!-- main image -->
-             <img src="https://picsum.photos/600" alt="main image">
+             <img src="${main_img}" alt="main image">
 
             <!-- card footer -->
             <div id="card_footer">
                 <!-- profile -->
                 <div id="profile">
-                    <img src="https://api.dicebear.com/10.x/patchwork/svg?seed=1dej" alt="profile picture" id="profile_pic">
+                    <img src="https://api.dicebear.com/10.x/${pfp_style}/svg?seed=${pfp_seed}" alt="profile picture" id="profile_pic">
                     <div>
-                        <p id="username">Jon Doe</p>
-                        <p id="date">24 Mar, 2023</p>
+                        <p id="username">${name}</p>
+                        <p id="date">${date}</p>
                     </div>
                 </div>
                 <!-- actions -->
